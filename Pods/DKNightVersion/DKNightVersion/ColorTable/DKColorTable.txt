@@ -1,0 +1,6 @@
+NORMAL   NIGHT
+#ffffff  #343434  WHITE
+#000000  #aaaaaa  BLACK
+#f0eff5  #222222  GRAY_BG
+#ee325b  #ee325b  TINT
+

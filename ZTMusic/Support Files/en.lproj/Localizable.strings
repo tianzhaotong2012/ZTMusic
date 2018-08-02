@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  ZTMusic
+
+  Created by 李伯坤 on 2018/7/31.
+  Copyright © 2018年 李伯坤. All rights reserved.
+*/
+
+"音乐" = "Music";
+"确定" = "Ok";
+"取消" = "Cancel";
+
+"资料库" = "Library";
+"搜索" = "Search";
+
+"设置" = "Setting";
+"夜间模式" = "Night Mode";
