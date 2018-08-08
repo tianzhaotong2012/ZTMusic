@@ -76,6 +76,16 @@ void RegisterHostViewReusableView(__kindof UIScrollView *hostView, NSString *kin
     }
 }
 
+- (UICollectionView *)collectionView
+{
+    return (UICollectionView *)self.hostView;
+}
+
+- (UITableView *)tableView
+{
+    return (UITableView *)self.hostView;
+}
+
 @end
 
 

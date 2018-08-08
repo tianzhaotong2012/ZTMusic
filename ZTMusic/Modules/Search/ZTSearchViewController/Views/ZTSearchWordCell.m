@@ -39,9 +39,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        [self setBackgroundColor:[UIColor whiteColor]];
         [self setSelectedBackgrounColor:[UIColor colorPink]];
-        
         self.titleLabel = self.contentView.addLabel(0)
         .font([UIFont systemFontOfSize:22]).textColor([UIColor colorPink]).adjustsFontSizeToFitWidth(YES)
         .masonry(^(MASConstraintMaker *make) {

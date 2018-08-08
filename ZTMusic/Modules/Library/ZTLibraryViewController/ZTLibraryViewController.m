@@ -8,6 +8,12 @@
 
 #import "ZTLibraryViewController.h"
 #import "ZTSettingViewController.h"
+#import "ZTLibraryCateModel.h"
+
+typedef NS_ENUM(NSInteger, ZTLibraryVCSectionType) {
+    ZTLibraryVCSectionTypeCommon,
+    ZTLibraryVCSectionTypeRecent,
+};
 
 @interface ZTLibraryViewController ()
 
@@ -20,16 +26,33 @@
     [self.navigationItem setTitle:LOCSTR(@"资料库")];
     
     @weakify(self);
-    [self addRightBarButtonWithImage:[UIImage imageNamed:@"nav_setting"] actionBlick:^{
+    [self addRightBarButtonWithImage:[UIImage imageNamed:@"nav_edit"] actionBlick:^{
         @strongify(self);
         ZTSettingViewController *settingVC = [[ZTSettingViewController alloc] init];
         [self.navigationController pushViewController:settingVC animated:YES];
     }];
     
-    self.addSection(0);
-    self.addSeperatorCell(CGSizeMake(-1, 1024), [UIColor whiteColor]).toSection(0);
-    [self reloadView];
+    [self loadLibraryVCSubViews];
 }
 
+- (void)loadLibraryVCSubViews
+{
+    self.clear();
+    
+    NSArray *cateData = [ZTLibraryCateModel selectedModels];
+    if (cateData.count > 0) {
+        NSInteger sectionTag = ZTLibraryVCSectionTypeCommon;
+        self.addSection(sectionTag).sectionInsets(UIEdgeInsetsMake(20, 20, 10, 20)).minimumLineSpacing(20).minimumInteritemSpacing(20);
+        self.addCells(@"ZTLibraryCateCell").toSection(sectionTag).withDataModelArray(cateData);
+    }
+    
+    {
+        NSInteger sectionTag = ZTLibraryVCSectionTypeRecent;
+        self.addSection(sectionTag);
+        self.addCell(@"ZTSearchSectionTitleCell").toSection(sectionTag).withDataModel(@{@"title" : @"最近添加"});
+    }
+    
+    [self reloadView];
+}
 
 @end

@@ -6,8 +6,13 @@
 //  Copyright © 2018年 李伯坤. All rights reserved.
 //
 
-#import "ZZFlexibleLayoutViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface ZTSearchResultViewController : ZZFlexibleLayoutViewController
+@interface ZTSearchResultViewController : UIViewController <UISearchResultsUpdating, UISearchBarDelegate>
+
+/// 搜索回调
+@property (nonatomic, copy) void (^searchAction)(NSString *word);
+
+- (void)startSearch:(NSString *)word;
 
 @end

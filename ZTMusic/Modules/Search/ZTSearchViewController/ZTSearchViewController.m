@@ -8,15 +8,15 @@
 
 #import "ZTSearchViewController.h"
 #import "ZTSearchAngel.h"
-#import "ZTSearchResultAngel.h"
+#import "ZTSearchResultViewController.h"
 
-@interface ZTSearchViewController () <UISearchControllerDelegate, UISearchResultsUpdating>
+@interface ZTSearchViewController ()
 
 @property (nonatomic, strong) UIActivityIndicatorView *loadingView;
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) ZTSearchAngel *searchAngel;
-@property (nonatomic, strong) ZTSearchResultAngel *resultAngel;
+@property (nonatomic, strong) ZTSearchResultViewController *resultVC;
 
 @end
 
@@ -26,6 +26,7 @@
     [super loadView];
     [self.navigationItem setTitle:LOCSTR(@"搜索")];
     [self.view dk_setBackgroundColorPicker:DKColorPickerWithKey(WHITE)];
+    self.definesPresentationContext = YES;
     
     [self loadSearchVCUI];
 }
@@ -55,30 +56,11 @@
     }];
 }
 
-- (void)showSearchViewAndSearh:(NSString *)search
+- (void)showSearchViewAndSearh:(NSString *)word
 {
-    [self.searchController.searchBar setText:search];
-    [self.searchController.searchBar becomeFirstResponder];
-}
-
-#pragma mark - # Delegate
-//MARK: UISearchResultsUpdating
-- (void)updateSearchResultsForSearchController:(UISearchController *)searchController
-{
-    
-}
-
-//MARK: UISearchControllerDelegate
-- (void)willPresentSearchController:(UISearchController *)searchController
-{
-    [self.resultAngel setHostView:self.collectionView];
-    [self.collectionView reloadData];
-}
-
-- (void)willDismissSearchController:(UISearchController *)searchController
-{
-    [self.searchAngel setHostView:self.collectionView];
-    [self.collectionView reloadData];
+    [self.searchController.searchBar setText:word];
+    [self.searchController setActive:YES];
+    [self.resultVC startSearch:word];
 }
 
 #pragma mark - # UI
@@ -88,6 +70,7 @@
     self.loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:self.loadingView]];
     
+    [self addChildViewController:self.resultVC];
     if (@available(iOS 11.0, *)) {
         self.navigationItem.searchController = self.searchController;
         self.navigationItem.hidesSearchBarWhenScrolling = NO;
@@ -104,8 +87,6 @@
         @strongify(self);
         [self showSearchViewAndSearh:word];
     }];
-    self.resultAngel = [[ZTSearchResultAngel alloc] init];
-    
     [self.searchAngel loadHistorySearchModule];
 }
 
@@ -123,17 +104,31 @@
 - (UISearchController *)searchController
 {
     if (!_searchController) {
-        UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+        UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultVC];
         [searchController.searchBar dk_setTintColorPicker:DKColorPickerWithKey(TINT)];
         [searchController.searchBar dk_setBarTintColorPicker:DKColorPickerWithKey(WHITE)];
         [searchController.searchBar dk_setBackgroundColorPicker:DKColorPickerWithKey(WHITE)];
         [searchController.searchBar setPlaceholder:LOCSTR(@"音乐")];
-        searchController.searchResultsUpdater = self;
-        searchController.delegate = self;
-        searchController.dimsBackgroundDuringPresentation = NO;
+        [searchController.searchBar setScopeButtonTitles:@[LOCSTR(@"网络"), LOCSTR(@"资料库")]];
+        searchController.searchResultsUpdater = self.resultVC;
+        searchController.searchBar.delegate = self.resultVC;
         _searchController = searchController;
     }
     return _searchController;
+}
+
+- (ZTSearchResultViewController *)resultVC
+{
+    if (!_resultVC) {
+        @weakify(self);
+        ZTSearchResultViewController *resultVC = [[ZTSearchResultViewController alloc] init];
+        [resultVC setSearchAction:^(NSString *word) {
+            @strongify(self);
+            [self.searchAngel addHistorySearchWordRecord:word];
+        }];
+        _resultVC = resultVC;
+    }
+    return _resultVC;
 }
 
 @end

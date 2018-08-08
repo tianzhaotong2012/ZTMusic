@@ -7,31 +7,60 @@
 //
 
 #import "ZTSearchResultViewController.h"
+#import "ZTSearchResultAngel.h"
 
 @interface ZTSearchResultViewController ()
+
+@property (nonatomic, strong) UICollectionView *collectionView;
+
+@property (nonatomic, strong) ZTSearchResultAngel *angel;
+
+@property (nonatomic, strong) NSString *keyword;
 
 @end
 
 @implementation ZTSearchResultViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (void)loadView
+{
+    [super loadView];
+    [self setEdgesForExtendedLayout:UIRectEdgeNone];
+    self.collectionView = self.view.addCollectionView(0).frame(self.view.bounds).backgroundColor([UIColor clearColor]).alwaysBounceVertical(YES).view;
+    self.collectionView.dk_backgroundColorPicker = DKColorPickerWithKey(GRAY_BG);
+    self.angel = [[ZTSearchResultAngel alloc] initWithHostView:self.collectionView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)startSearch:(NSString *)word
+{
+    if (self.searchAction) {
+        self.searchAction(word);
+    }
+    
+    [TLUIUtility showLoading:nil];
+    [self.angel requestSearch:word completeAction:^(BOOL success, id data) {
+        [TLUIUtility hiddenLoading];
+    }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - # Delegate
+//MARK: UISearchBarDelegate
+- (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"]) {
+        [self startSearch:searchBar.text];
+        [searchBar resignFirstResponder];
+        return NO;
+    }
+    return YES;
 }
-*/
+
+//MARK: UISearchResultsUpdating
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    if (![self.keyword isEqualToString:searchController.searchBar.text]) {
+        self.keyword = searchController.searchBar.text;
+        self.angel.clear();
+        [self.collectionView reloadData];
+    }
+}
 
 @end

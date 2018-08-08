@@ -126,7 +126,6 @@ PODS:
     - TLKit/TLCategories/UIKit/UIAlertView
     - TLKit/TLCategories/UIKit/UIWindow
   - TLKit/TLShortcut (0.0.27)
-  - TLTabBarController (0.0.7)
   - UICKeyChainStore (2.1.1)
   - UMCAnalytics (5.5.0):
     - UMCCommon
@@ -149,7 +148,6 @@ DEPENDENCIES:
   - OpenUDID (~> 1.0.0)
   - SDWebImage (~> 4.3.1)
   - TLKit (from `~/TLPods/TLKit`)
-  - TLTabBarController (from `https://github.com/tbl00c/TLTabBarController.git`, tag `0.0.7`)
   - UICKeyChainStore (~> 2.1.1)
   - UMCAnalytics
   - UMCCommon (~> 1.4.1)
@@ -161,14 +159,6 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   TLKit:
     :path: ~/TLPods/TLKit
-  TLTabBarController:
-    :git: https://github.com/tbl00c/TLTabBarController.git
-    :tag: 0.0.7
-
-CHECKOUT OPTIONS:
-  TLTabBarController:
-    :git: https://github.com/tbl00c/TLTabBarController.git
-    :tag: 0.0.7
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -183,7 +173,6 @@ SPEC CHECKSUMS:
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TLKit: 27144c9a267ea0a3dc58eca43344c1405e70e289
-  TLTabBarController: 6b0aaf8c96f6390acdc42241b3ae06b00ebcbc52
   UICKeyChainStore: 239558492fa260531a0774cfc611ea83a6eaff3a
   UMCAnalytics: 4667788559a72f2fa5077117d1b8802a3b6eb6bb
   UMCCommon: ac0bc01a46a5640bbd58646448f455b4c5404bf0
@@ -192,6 +181,6 @@ SPEC CHECKSUMS:
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 611f5776b0cbcbdf3a2bf60f5c677fa16e80e9e5
+PODFILE CHECKSUM: 1edc95d8b11ed93fe4ac28d3d191fbe4bd7c1879
 
 COCOAPODS: 1.4.0

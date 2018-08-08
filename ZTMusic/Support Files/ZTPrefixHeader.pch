@@ -14,7 +14,6 @@
 
 #import <Masonry/Masonry.h>
 #import <TLKit/TLKit.h>
-#import <TLTabBarController/TLTabBarControllerProtocol.h>
 #import "ZZFLEX.h"
 #import <MJExtension/MJExtension.h>
 #import <SDWebImage/UIImageView+WebCache.h>

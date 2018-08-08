@@ -6,8 +6,6 @@ target 'ZTMusic' do
 #     pod 'TLKit', :git => 'https://github.com/tbl00c/TLKit.git', :tag => '0.0.27'
      pod 'TLKit', :path => '~/TLPods/TLKit'
 
-     pod 'TLTabBarController', :git => 'https://github.com/tbl00c/TLTabBarController.git', :tag => '0.0.7'
-
      # ------------------ 第三方Pod仓库 ------------------
      pod 'AFNetworking', '~> 3.1.0'
      pod 'SDWebImage', '~> 4.3.1'

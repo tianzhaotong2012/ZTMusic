@@ -7,9 +7,10 @@
 //
 
 #import "ZTLauncherManager.h"
-#import <TLTabBarController/TLTabBarController.h>
+#import <LNPopupController/LNPopupController.h>
 #import "ZTAppConfig.h"
 
+#import "ZTMusicPlayViewController.h"
 #import "ZTLibraryViewController.h"
 #import "ZTSearchViewController.h"
 
@@ -48,8 +49,8 @@
 
 - (BOOL)jumpToTabPage:(ZTTabPage)tabPage
 {
-    TLTabBarController *tabBarController = (TLTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
-    if ([tabBarController isKindOfClass:[TLTabBarController class]]) {
+    UITabBarController *tabBarController = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    if ([tabBarController isKindOfClass:[UITabBarController class]]) {
         [tabBarController setSelectedIndex:tabPage];
         return YES;
     }
@@ -67,14 +68,14 @@
     NSLog(@"【Launcher】显示根TabVC");
     [window removeAllSubviews];
     
-    TLTabBarController *vc = [self rootTabBarController];
+    UITabBarController *vc = [self rootTabBarController];
     [window setRootViewController:vc];
     [window addSubview:vc.view];
     [window makeKeyAndVisible];
 }
 
 #pragma mark - # Getters
-- (TLTabBarController *)rootTabBarController
+- (UITabBarController *)rootTabBarController
 {
     UINavigationController *(^createItemVC)(Class vcClass, NSString *title, NSString *image, NSString *imageSelected) = ^UINavigationController *(Class vcClass, NSString *title, NSString *image, NSString *imageSelected) {
         __kindof UIViewController *vc = [[vcClass alloc] init];
@@ -97,11 +98,14 @@
     [vcArray addObject:createItemVC([ZTLibraryViewController class], @"资料库", @"tabbar_library", @"tabbar_library")];
     [vcArray addObject:createItemVC([ZTSearchViewController class], @"搜索", @"tabbar_search", @"tabbar_search")];
     
-    TLTabBarController *tabBarController = [[TLTabBarController alloc] init];
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.tabBar.dk_barTintColorPicker = DKColorPickerWithKey(WHITE);
     tabBarController.tabBar.dk_backgroundColorPicker = DKColorPickerWithKey(WHITE);
     tabBarController.tabBar.dk_tintColorPicker = DKColorPickerWithKey(TINT);
     [tabBarController setViewControllers:vcArray];
+    
+    [tabBarController presentPopupBarWithContentViewController:[ZTMusicPlayViewController sharedInstance] animated:YES completion:nil];
+    
     return tabBarController;
 }
 

@@ -9,9 +9,14 @@
 "音乐" = "Music";
 "确定" = "Ok";
 "取消" = "Cancel";
+"网络" = "Net Music";
 
-"资料库" = "Library";
+"资料库" = "Your Library";
 "搜索" = "Search";
+"最近搜索" = "Recent";
+"热门搜索" = "Hot";
+"清空" = "Clear";
+"清除最近搜索" = "Clear Recent Searches";
 
 "设置" = "Setting";
 "夜间模式" = "Night Mode";

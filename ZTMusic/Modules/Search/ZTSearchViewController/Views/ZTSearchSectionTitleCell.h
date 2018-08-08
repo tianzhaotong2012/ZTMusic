@@ -10,4 +10,6 @@
 
 @interface ZTSearchSectionTitleCell : UICollectionViewCell <ZZFlexibleLayoutViewProtocol>
 
+@property (nonatomic, copy) id (^eventAction)(NSInteger eventType, id data);
+
 @end

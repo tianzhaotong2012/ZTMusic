@@ -22,6 +22,8 @@
 
 /// 宿主，可以是tableView或者collectionView
 @property (nonatomic, weak) __kindof UIScrollView *hostView;
+@property (nonatomic, strong, readonly) UICollectionView *collectionView;
+@property (nonatomic, strong, readonly) UITableView *tableView;
 
 /**
  *  根据宿主View初始化
