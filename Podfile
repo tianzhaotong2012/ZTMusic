@@ -3,8 +3,7 @@ platform :ios, '8.0'
 target 'ZTMusic' do
      # ------------------ 个人开源Pod仓库 ------------------
      # TLKit 基础库，包含常用宏定义、常用分类、常用功能组件（HUD、actionSheet等）
-#     pod 'TLKit', :git => 'https://github.com/tbl00c/TLKit.git', :tag => '0.0.27'
-     pod 'TLKit', :path => '~/TLPods/TLKit'
+     pod 'TLKit', :git => 'https://github.com/tbl00c/TLKit.git'
 
      # ------------------ 第三方Pod仓库 ------------------
      pod 'AFNetworking', '~> 3.1.0'

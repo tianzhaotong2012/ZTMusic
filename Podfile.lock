@@ -147,7 +147,7 @@ DEPENDENCIES:
   - MJRefresh (~> 3.1.15.3)
   - OpenUDID (~> 1.0.0)
   - SDWebImage (~> 4.3.1)
-  - TLKit (from `~/TLPods/TLKit`)
+  - TLKit (from `https://github.com/tbl00c/TLKit.git`)
   - UICKeyChainStore (~> 2.1.1)
   - UMCAnalytics
   - UMCCommon (~> 1.4.1)
@@ -158,7 +158,12 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   TLKit:
-    :path: ~/TLPods/TLKit
+    :git: https://github.com/tbl00c/TLKit.git
+
+CHECKOUT OPTIONS:
+  TLKit:
+    :commit: b3b9c878427f82873a077694bdbd3571edd072c0
+    :git: https://github.com/tbl00c/TLKit.git
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -172,7 +177,7 @@ SPEC CHECKSUMS:
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  TLKit: 27144c9a267ea0a3dc58eca43344c1405e70e289
+  TLKit: e06e6018c04c6c13a96faefe980a13ff124ebeb1
   UICKeyChainStore: 239558492fa260531a0774cfc611ea83a6eaff3a
   UMCAnalytics: 4667788559a72f2fa5077117d1b8802a3b6eb6bb
   UMCCommon: ac0bc01a46a5640bbd58646448f455b4c5404bf0
@@ -181,6 +186,6 @@ SPEC CHECKSUMS:
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 1edc95d8b11ed93fe4ac28d3d191fbe4bd7c1879
+PODFILE CHECKSUM: 3f4f28279f777ca048d3146f5756d589a02e818d
 
 COCOAPODS: 1.4.0

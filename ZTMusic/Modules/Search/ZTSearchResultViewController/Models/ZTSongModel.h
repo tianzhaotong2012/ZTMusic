@@ -20,6 +20,7 @@
 
 /// 图片
 @property (nonatomic, strong) NSString *poster;
+@property (nonatomic, strong) UIImage *posterImage;
 
 /// 资源
 @property (nonatomic, strong) ZTSongPreviewModel *preview;
