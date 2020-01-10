@@ -7,7 +7,8 @@
 //
 
 #import "ZTMusicPlayViewController.h"
-#import <LNPopupController/LNPopupController.h>
+//#import <LNPopupController/LNPopupController.h>
+#import "LNPopupController.h"
 #import "ZTPlayerManager.h"
 
 @interface ZTMusicPlayViewController ()

@@ -7,7 +7,8 @@
 //
 
 #import "ZTLauncherManager.h"
-#import <LNPopupController/LNPopupController.h>
+//#import <LNPopupController/LNPopupController.h>
+#import "LNPopupController.h"
 #import "ZTAppConfig.h"
 
 #import "ZTMusicPlayViewController.h"

@@ -7,12 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9489722623C86A55002DE07B /* LNPopupControllerAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 948971FD23C86A54002DE07B /* LNPopupControllerAssets.xcassets */; };
+		9489722723C86A55002DE07B /* LNForwardingDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489720723C86A55002DE07B /* LNForwardingDelegate.m */; };
+		9489722823C86A55002DE07B /* LNPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489720823C86A55002DE07B /* LNPopupController.m */; };
+		9489722923C86A55002DE07B /* LNPopupCustomBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489720923C86A55002DE07B /* LNPopupCustomBarViewController.m */; };
+		9489722A23C86A55002DE07B /* LNPopupInteractionPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489720A23C86A55002DE07B /* LNPopupInteractionPanGestureRecognizer.m */; };
+		9489722B23C86A55002DE07B /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489720C23C86A55002DE07B /* MarqueeLabel.m */; };
+		9489722C23C86A55002DE07B /* LNChevronView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489720F23C86A55002DE07B /* LNChevronView.m */; };
+		9489722D23C86A55002DE07B /* NSObject+AltKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489721123C86A55002DE07B /* NSObject+AltKVC.m */; };
+		9489722E23C86A55002DE07B /* LNPopupLongPressGesutreRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489721423C86A55002DE07B /* LNPopupLongPressGesutreRecognizer.m */; };
+		9489722F23C86A55002DE07B /* LNPopupBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489721623C86A55002DE07B /* LNPopupBar.m */; };
+		9489723023C86A55002DE07B /* LNPopupCloseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489721723C86A55002DE07B /* LNPopupCloseButton.m */; };
+		9489723123C86A55002DE07B /* LNPopupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489721B23C86A55002DE07B /* LNPopupItem.m */; };
+		9489723223C86A55002DE07B /* LNPopupOpenTapGesutreRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489721D23C86A55002DE07B /* LNPopupOpenTapGesutreRecognizer.m */; };
+		9489723323C86A55002DE07B /* _LNWeakRef.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489722023C86A55002DE07B /* _LNWeakRef.m */; };
+		9489723423C86A55002DE07B /* UIViewController+LNPopupSupportPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489722123C86A55002DE07B /* UIViewController+LNPopupSupportPrivate.m */; };
+		9489723523C86A55002DE07B /* _LNPopupBase64Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489722323C86A55002DE07B /* _LNPopupBase64Utils.m */; };
+		9489723623C86A55002DE07B /* UIViewController+LNPopupSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489722423C86A55002DE07B /* UIViewController+LNPopupSupport.m */; };
 		BC763B9CAF96840676069576 /* libPods-ZTMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF950782CF6EF3F174EFF0D /* libPods-ZTMusic.a */; };
 		C22D73DC21197B8E00AB48AE /* ZTSearchResultTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D73DB21197B8E00AB48AE /* ZTSearchResultTitleCell.m */; };
 		C22D73DF21197C8F00AB48AE /* ZTArtistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D73DE21197C8F00AB48AE /* ZTArtistModel.m */; };
 		C22D73E221197E4000AB48AE /* ZTSearchResultArtistCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D73E121197E4000AB48AE /* ZTSearchResultArtistCell.m */; };
 		C22D73EB2119940800AB48AE /* ZTLibraryCateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D73EA2119940800AB48AE /* ZTLibraryCateCell.m */; };
-		C22D73ED21199BEF00AB48AE /* LNPopupController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22D73EC21199BEF00AB48AE /* LNPopupController.framework */; };
 		C22D73F221199EAC00AB48AE /* ZTMusicPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D73F121199EAC00AB48AE /* ZTMusicPlayViewController.m */; };
 		C22D73F52119A13A00AB48AE /* Player.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C22D73F42119A13A00AB48AE /* Player.xcassets */; };
 		C23110AF210EF86800C9C076 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23110AD210EF86800C9C076 /* LaunchScreen.storyboard */; };
@@ -114,6 +130,45 @@
 /* Begin PBXFileReference section */
 		5CF950782CF6EF3F174EFF0D /* libPods-ZTMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZTMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64C40966AD34FD3CB1D5DFAE /* Pods-ZTMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZTMusic/Pods-ZTMusic.release.xcconfig"; sourceTree = "<group>"; };
+		948971FD23C86A54002DE07B /* LNPopupControllerAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LNPopupControllerAssets.xcassets; sourceTree = "<group>"; };
+		948971FE23C86A54002DE07B /* LNPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPopupController.h; sourceTree = "<group>"; };
+		9489720023C86A54002DE07B /* LNPopupCloseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPopupCloseButton.h; sourceTree = "<group>"; };
+		9489720123C86A55002DE07B /* LNPopupBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPopupBar.h; sourceTree = "<group>"; };
+		9489720223C86A55002DE07B /* LNPopupContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPopupContentView.h; sourceTree = "<group>"; };
+		9489720323C86A55002DE07B /* LNPopupItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPopupItem.h; sourceTree = "<group>"; };
+		9489720423C86A55002DE07B /* UIViewController+LNPopupSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LNPopupSupport.h"; sourceTree = "<group>"; };
+		9489720523C86A55002DE07B /* LNPopupCustomBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPopupCustomBarViewController.h; sourceTree = "<group>"; };
+		9489720723C86A55002DE07B /* LNForwardingDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNForwardingDelegate.m; sourceTree = "<group>"; };
+		9489720823C86A55002DE07B /* LNPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNPopupController.m; sourceTree = "<group>"; };
+		9489720923C86A55002DE07B /* LNPopupCustomBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNPopupCustomBarViewController.m; sourceTree = "<group>"; };
+		9489720A23C86A55002DE07B /* LNPopupInteractionPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNPopupInteractionPanGestureRecognizer.m; sourceTree = "<group>"; };
+		9489720B23C86A55002DE07B /* LNPopupLongPressGesutreRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPopupLongPressGesutreRecognizer.h; sourceTree = "<group>"; };
+		9489720C23C86A55002DE07B /* MarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarqueeLabel.m; sourceTree = "<group>"; };
+		9489720D23C86A55002DE07B /* LNPopupItem+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LNPopupItem+Private.h"; sourceTree = "<group>"; };
+		9489720E23C86A55002DE07B /* LNPopupOpenTapGesutreRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPopupOpenTapGesutreRecognizer.h; sourceTree = "<group>"; };
+		9489720F23C86A55002DE07B /* LNChevronView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNChevronView.m; sourceTree = "<group>"; };
+		9489721023C86A55002DE07B /* _LNPopupBase64Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _LNPopupBase64Utils.h; sourceTree = "<group>"; };
+		9489721123C86A55002DE07B /* NSObject+AltKVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AltKVC.m"; sourceTree = "<group>"; };
+		9489721223C86A55002DE07B /* UIViewController+LNPopupSupportPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LNPopupSupportPrivate.h"; sourceTree = "<group>"; };
+		9489721323C86A55002DE07B /* _LNWeakRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _LNWeakRef.h; sourceTree = "<group>"; };
+		9489721423C86A55002DE07B /* LNPopupLongPressGesutreRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNPopupLongPressGesutreRecognizer.m; sourceTree = "<group>"; };
+		9489721523C86A55002DE07B /* LNPopupInteractionPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPopupInteractionPanGestureRecognizer.h; sourceTree = "<group>"; };
+		9489721623C86A55002DE07B /* LNPopupBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNPopupBar.m; sourceTree = "<group>"; };
+		9489721723C86A55002DE07B /* LNPopupCloseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNPopupCloseButton.m; sourceTree = "<group>"; };
+		9489721823C86A55002DE07B /* LNPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPopupController.h; sourceTree = "<group>"; };
+		9489721923C86A55002DE07B /* LNPopupCloseButton+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LNPopupCloseButton+Private.h"; sourceTree = "<group>"; };
+		9489721A23C86A55002DE07B /* LNForwardingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNForwardingDelegate.h; sourceTree = "<group>"; };
+		9489721B23C86A55002DE07B /* LNPopupItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNPopupItem.m; sourceTree = "<group>"; };
+		9489721C23C86A55002DE07B /* LNChevronView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNChevronView.h; sourceTree = "<group>"; };
+		9489721D23C86A55002DE07B /* LNPopupOpenTapGesutreRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNPopupOpenTapGesutreRecognizer.m; sourceTree = "<group>"; };
+		9489721E23C86A55002DE07B /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
+		9489721F23C86A55002DE07B /* LNPopupBar+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LNPopupBar+Private.h"; sourceTree = "<group>"; };
+		9489722023C86A55002DE07B /* _LNWeakRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _LNWeakRef.m; sourceTree = "<group>"; };
+		9489722123C86A55002DE07B /* UIViewController+LNPopupSupportPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LNPopupSupportPrivate.m"; sourceTree = "<group>"; };
+		9489722223C86A55002DE07B /* NSObject+AltKVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AltKVC.h"; sourceTree = "<group>"; };
+		9489722323C86A55002DE07B /* _LNPopupBase64Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _LNPopupBase64Utils.m; sourceTree = "<group>"; };
+		9489722423C86A55002DE07B /* UIViewController+LNPopupSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LNPopupSupport.m"; sourceTree = "<group>"; };
+		9489722523C86A55002DE07B /* LNPopupCustomBarViewController+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LNPopupCustomBarViewController+Private.h"; sourceTree = "<group>"; };
 		C22D73DA21197B8E00AB48AE /* ZTSearchResultTitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTSearchResultTitleCell.h; sourceTree = "<group>"; };
 		C22D73DB21197B8E00AB48AE /* ZTSearchResultTitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTSearchResultTitleCell.m; sourceTree = "<group>"; };
 		C22D73DD21197C8F00AB48AE /* ZTArtistModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTArtistModel.h; sourceTree = "<group>"; };
@@ -122,7 +177,6 @@
 		C22D73E121197E4000AB48AE /* ZTSearchResultArtistCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTSearchResultArtistCell.m; sourceTree = "<group>"; };
 		C22D73E92119940800AB48AE /* ZTLibraryCateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTLibraryCateCell.h; sourceTree = "<group>"; };
 		C22D73EA2119940800AB48AE /* ZTLibraryCateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTLibraryCateCell.m; sourceTree = "<group>"; };
-		C22D73EC21199BEF00AB48AE /* LNPopupController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LNPopupController.framework; path = Carthage/Build/iOS/LNPopupController.framework; sourceTree = "<group>"; };
 		C22D73F021199EAC00AB48AE /* ZTMusicPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTMusicPlayViewController.h; sourceTree = "<group>"; };
 		C22D73F121199EAC00AB48AE /* ZTMusicPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTMusicPlayViewController.m; sourceTree = "<group>"; };
 		C22D73F42119A13A00AB48AE /* Player.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Player.xcassets; sourceTree = "<group>"; };
@@ -328,7 +382,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C22D73ED21199BEF00AB48AE /* LNPopupController.framework in Frameworks */,
 				BC763B9CAF96840676069576 /* libPods-ZTMusic.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,10 +392,71 @@
 		268A841F19E5A00E7B69E5F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C22D73EC21199BEF00AB48AE /* LNPopupController.framework */,
 				5CF950782CF6EF3F174EFF0D /* libPods-ZTMusic.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		948971FC23C86A54002DE07B /* LNPopupController */ = {
+			isa = PBXGroup;
+			children = (
+				948971FD23C86A54002DE07B /* LNPopupControllerAssets.xcassets */,
+				948971FE23C86A54002DE07B /* LNPopupController.h */,
+				948971FF23C86A54002DE07B /* LNPopupController */,
+			);
+			path = LNPopupController;
+			sourceTree = "<group>";
+		};
+		948971FF23C86A54002DE07B /* LNPopupController */ = {
+			isa = PBXGroup;
+			children = (
+				9489720023C86A54002DE07B /* LNPopupCloseButton.h */,
+				9489720123C86A55002DE07B /* LNPopupBar.h */,
+				9489720223C86A55002DE07B /* LNPopupContentView.h */,
+				9489720323C86A55002DE07B /* LNPopupItem.h */,
+				9489720423C86A55002DE07B /* UIViewController+LNPopupSupport.h */,
+				9489720523C86A55002DE07B /* LNPopupCustomBarViewController.h */,
+				9489720623C86A55002DE07B /* Private */,
+			);
+			path = LNPopupController;
+			sourceTree = "<group>";
+		};
+		9489720623C86A55002DE07B /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				9489720723C86A55002DE07B /* LNForwardingDelegate.m */,
+				9489720823C86A55002DE07B /* LNPopupController.m */,
+				9489720923C86A55002DE07B /* LNPopupCustomBarViewController.m */,
+				9489720A23C86A55002DE07B /* LNPopupInteractionPanGestureRecognizer.m */,
+				9489720B23C86A55002DE07B /* LNPopupLongPressGesutreRecognizer.h */,
+				9489720C23C86A55002DE07B /* MarqueeLabel.m */,
+				9489720D23C86A55002DE07B /* LNPopupItem+Private.h */,
+				9489720E23C86A55002DE07B /* LNPopupOpenTapGesutreRecognizer.h */,
+				9489720F23C86A55002DE07B /* LNChevronView.m */,
+				9489721023C86A55002DE07B /* _LNPopupBase64Utils.h */,
+				9489721123C86A55002DE07B /* NSObject+AltKVC.m */,
+				9489721223C86A55002DE07B /* UIViewController+LNPopupSupportPrivate.h */,
+				9489721323C86A55002DE07B /* _LNWeakRef.h */,
+				9489721423C86A55002DE07B /* LNPopupLongPressGesutreRecognizer.m */,
+				9489721523C86A55002DE07B /* LNPopupInteractionPanGestureRecognizer.h */,
+				9489721623C86A55002DE07B /* LNPopupBar.m */,
+				9489721723C86A55002DE07B /* LNPopupCloseButton.m */,
+				9489721823C86A55002DE07B /* LNPopupController.h */,
+				9489721923C86A55002DE07B /* LNPopupCloseButton+Private.h */,
+				9489721A23C86A55002DE07B /* LNForwardingDelegate.h */,
+				9489721B23C86A55002DE07B /* LNPopupItem.m */,
+				9489721C23C86A55002DE07B /* LNChevronView.h */,
+				9489721D23C86A55002DE07B /* LNPopupOpenTapGesutreRecognizer.m */,
+				9489721E23C86A55002DE07B /* MarqueeLabel.h */,
+				9489721F23C86A55002DE07B /* LNPopupBar+Private.h */,
+				9489722023C86A55002DE07B /* _LNWeakRef.m */,
+				9489722123C86A55002DE07B /* UIViewController+LNPopupSupportPrivate.m */,
+				9489722223C86A55002DE07B /* NSObject+AltKVC.h */,
+				9489722323C86A55002DE07B /* _LNPopupBase64Utils.m */,
+				9489722423C86A55002DE07B /* UIViewController+LNPopupSupport.m */,
+				9489722523C86A55002DE07B /* LNPopupCustomBarViewController+Private.h */,
+			);
+			path = Private;
 			sourceTree = "<group>";
 		};
 		C22D73E3211989EB00AB48AE /* Player */ = {
@@ -835,6 +949,7 @@
 		C29EAC3721100BEC00EF0AB3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				948971FC23C86A54002DE07B /* LNPopupController */,
 				C29EAC3821100BFF00EF0AB3 /* TLRefresh */,
 				C29EAC8621104C9A00EF0AB3 /* TLSettingItem */,
 			);
@@ -1083,6 +1198,7 @@
 			files = (
 				C29EAC8521104B7100EF0AB3 /* Utilities.xcassets in Resources */,
 				C29EAC6A2110474600EF0AB3 /* Localizable.strings in Resources */,
+				9489722623C86A55002DE07B /* LNPopupControllerAssets.xcassets in Resources */,
 				C29EAC562110148100EF0AB3 /* Search.xcassets in Resources */,
 				C256F4EF211AC75B00BEFC26 /* Library.xcassets in Resources */,
 				C23110AF210EF86800C9C076 /* LaunchScreen.storyboard in Resources */,
@@ -1145,7 +1261,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "
+";
 		};
 		E04B3E0868081542E56A3F91 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1172,13 +1289,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9489722F23C86A55002DE07B /* LNPopupBar.m in Sources */,
+				9489723323C86A55002DE07B /* _LNWeakRef.m in Sources */,
 				C231116E210F262800C9C076 /* LCDatabase.mm in Sources */,
 				C2311142210F262100C9C076 /* ZZFLEXChainSectionModel.m in Sources */,
+				9489723023C86A55002DE07B /* LNPopupCloseButton.m in Sources */,
 				C231116D210F262800C9C076 /* LCBaseRequest.m in Sources */,
 				C29EAC7D211048D800EF0AB3 /* UIColor+ZTKit.m in Sources */,
 				C2311165210F262100C9C076 /* LCRouter+Register.m in Sources */,
 				C231118E210F275B00C9C076 /* WKWebViewJavascriptBridge+TLJSBridge..m in Sources */,
+				9489722C23C86A55002DE07B /* LNChevronView.m in Sources */,
 				C256F4FA211AEBE800BEFC26 /* ZTPlayer.m in Sources */,
+				9489723623C86A55002DE07B /* UIViewController+LNPopupSupport.m in Sources */,
+				9489722D23C86A55002DE07B /* NSObject+AltKVC.m in Sources */,
 				C231114E210F262100C9C076 /* ZZBaseViewChainModel.m in Sources */,
 				C2B0AC222112DF8A0047BE89 /* ZTSearchWordCell.m in Sources */,
 				C29EAC9E21104C9A00EF0AB3 /* TLSettingItemBaseCell.m in Sources */,
@@ -1186,6 +1309,7 @@
 				C29EAC9C21104C9A00EF0AB3 /* TLSettingItemSwitchCell.m in Sources */,
 				C29EAC4521100BFF00EF0AB3 /* UIView+TLEmpty.m in Sources */,
 				C231113C210F262100C9C076 /* ZZFlexibleLayoutSectionModel.m in Sources */,
+				9489722E23C86A55002DE07B /* LNPopupLongPressGesutreRecognizer.m in Sources */,
 				C231117A210F275600C9C076 /* WKWebViewJavascriptBridge.m in Sources */,
 				C231113D210F262100C9C076 /* ZZFlexibleLayoutViewModel.m in Sources */,
 				C2311144210F262100C9C076 /* ZZFLEXChainViewModel.m in Sources */,
@@ -1217,9 +1341,12 @@
 				C231113F210F262100C9C076 /* ZZFlexibleLayoutEmptyHeaderFooterView.m in Sources */,
 				C231118D210F275B00C9C076 /* TLWebViewController.m in Sources */,
 				C2E583A921130E3700BB1330 /* ZTSearchResultViewController.m in Sources */,
+				9489723523C86A55002DE07B /* _LNPopupBase64Utils.m in Sources */,
+				9489722B23C86A55002DE07B /* MarqueeLabel.m in Sources */,
 				C29EAC4921100CA800EF0AB3 /* ZTAppConfig.m in Sources */,
 				C231115C210F262100C9C076 /* ZZFlexibleLayoutFlowLayout.m in Sources */,
 				C23110CF210F226500C9C076 /* ZTAppDelegate.m in Sources */,
+				9489722923C86A55002DE07B /* LNPopupCustomBarViewController.m in Sources */,
 				C29EAC4F2110134200EF0AB3 /* ZTLibraryViewController.m in Sources */,
 				C2311149210F262100C9C076 /* UIView+ZZFLEX.m in Sources */,
 				C22D73F221199EAC00AB48AE /* ZTMusicPlayViewController.m in Sources */,
@@ -1233,6 +1360,8 @@
 				C231115E210F262100C9C076 /* ZZFLEXRequestModel.m in Sources */,
 				C231114F210F262100C9C076 /* ZZButtonChainModel.m in Sources */,
 				C29EAC4221100BFF00EF0AB3 /* LCRefreshHeader.m in Sources */,
+				9489722A23C86A55002DE07B /* LNPopupInteractionPanGestureRecognizer.m in Sources */,
+				9489723123C86A55002DE07B /* LNPopupItem.m in Sources */,
 				C231114B210F262100C9C076 /* ZZLabelChainModel.m in Sources */,
 				C29EAC4421100BFF00EF0AB3 /* UIScrollView+TLLoadMoreFooter.m in Sources */,
 				C2311157210F262100C9C076 /* UIView+ZZFrame.m in Sources */,
@@ -1256,15 +1385,19 @@
 				C2311153210F262100C9C076 /* ZZTextViewChainModel.m in Sources */,
 				C22D73DC21197B8E00AB48AE /* ZTSearchResultTitleCell.m in Sources */,
 				C2311143210F262100C9C076 /* ZZFLEXChainViewEditModel.m in Sources */,
+				9489723423C86A55002DE07B /* UIViewController+LNPopupSupportPrivate.m in Sources */,
 				C22D73E221197E4000AB48AE /* ZTSearchResultArtistCell.m in Sources */,
 				C2311163210F262100C9C076 /* LCRouter.m in Sources */,
 				C29EAC792110487A00EF0AB3 /* UIViewController+Night.m in Sources */,
 				C2311156210F262100C9C076 /* UIButton+ZZExtension.m in Sources */,
 				C29EAC9B21104C9A00EF0AB3 /* TLSettingSectionFooterView.m in Sources */,
 				C231114D210F262100C9C076 /* ZZTableViewChainModel.m in Sources */,
+				9489723223C86A55002DE07B /* LNPopupOpenTapGesutreRecognizer.m in Sources */,
 				C2311152210F262100C9C076 /* ZZControlChainModel.m in Sources */,
+				9489722723C86A55002DE07B /* LNForwardingDelegate.m in Sources */,
 				C231117B210F275600C9C076 /* WebViewJavascriptBridge.m in Sources */,
 				C22D73DF21197C8F00AB48AE /* ZTArtistModel.m in Sources */,
+				9489722823C86A55002DE07B /* LNPopupController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
