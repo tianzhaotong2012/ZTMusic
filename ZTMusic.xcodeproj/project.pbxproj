@@ -27,6 +27,7 @@
 		9489724123CC4710002DE07B /* ZTExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489723F23CC4710002DE07B /* ZTExploreViewController.m */; };
 		9489724A23CC517D002DE07B /* ZTStyleACell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489724823CC517D002DE07B /* ZTStyleACell.m */; };
 		9489724D23CC9FCA002DE07B /* ZTExploreMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489724B23CC9FCA002DE07B /* ZTExploreMode.m */; };
+		9489725023CCC489002DE07B /* ZTExploreSectionTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489724E23CCC489002DE07B /* ZTExploreSectionTitleCell.m */; };
 		BC763B9CAF96840676069576 /* libPods-ZTMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF950782CF6EF3F174EFF0D /* libPods-ZTMusic.a */; };
 		C22D73DC21197B8E00AB48AE /* ZTSearchResultTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D73DB21197B8E00AB48AE /* ZTSearchResultTitleCell.m */; };
 		C22D73DF21197C8F00AB48AE /* ZTArtistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D73DE21197C8F00AB48AE /* ZTArtistModel.m */; };
@@ -178,6 +179,8 @@
 		9489724923CC517D002DE07B /* ZTStyleACell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTStyleACell.h; sourceTree = "<group>"; };
 		9489724B23CC9FCA002DE07B /* ZTExploreMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTExploreMode.m; sourceTree = "<group>"; };
 		9489724C23CC9FCA002DE07B /* ZTExploreMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTExploreMode.h; sourceTree = "<group>"; };
+		9489724E23CCC489002DE07B /* ZTExploreSectionTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTExploreSectionTitleCell.m; sourceTree = "<group>"; };
+		9489724F23CCC489002DE07B /* ZTExploreSectionTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTExploreSectionTitleCell.h; sourceTree = "<group>"; };
 		C22D73DA21197B8E00AB48AE /* ZTSearchResultTitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTSearchResultTitleCell.h; sourceTree = "<group>"; };
 		C22D73DB21197B8E00AB48AE /* ZTSearchResultTitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTSearchResultTitleCell.m; sourceTree = "<group>"; };
 		C22D73DD21197C8F00AB48AE /* ZTArtistModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTArtistModel.h; sourceTree = "<group>"; };
@@ -507,6 +510,8 @@
 		9489723E23CC458D002DE07B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9489724F23CCC489002DE07B /* ZTExploreSectionTitleCell.h */,
+				9489724E23CCC489002DE07B /* ZTExploreSectionTitleCell.m */,
 				9489724923CC517D002DE07B /* ZTStyleACell.h */,
 				9489724823CC517D002DE07B /* ZTStyleACell.m */,
 			);
@@ -1401,6 +1406,7 @@
 				9489722B23C86A55002DE07B /* MarqueeLabel.m in Sources */,
 				C29EAC4921100CA800EF0AB3 /* ZTAppConfig.m in Sources */,
 				C231115C210F262100C9C076 /* ZZFlexibleLayoutFlowLayout.m in Sources */,
+				9489725023CCC489002DE07B /* ZTExploreSectionTitleCell.m in Sources */,
 				C23110CF210F226500C9C076 /* ZTAppDelegate.m in Sources */,
 				9489722923C86A55002DE07B /* LNPopupCustomBarViewController.m in Sources */,
 				C29EAC4F2110134200EF0AB3 /* ZTLibraryViewController.m in Sources */,

@@ -76,11 +76,11 @@ typedef NS_ENUM(NSInteger, ZTExploreVCSectionType) {
         
         self.addSection(i);
         if (model.sectionTitle) {
-            self.addCell(@"ZTSearchResultTitleCell").toSection(i).withDataModel(@{@"title" : model.sectionTitle});
+            self.addCell(@"ZTExploreSectionTitleCell").toSection(i).withDataModel(@{@"title" : model.sectionTitle});
         }
         if (model.type == 1) {
-            self.addCells(@"ZTStyleACell").toSection(i).withDataModelArray(model.songs).selectedAction(^ (ZTSongModel *model) {
-               
+            self.addCell(@"ZTStyleACell").toSection(i).withDataModel(model.songs).selectedAction(^ (ZTSongModel *model) {
+                
             });
         }
         else if (model.type == 2) {

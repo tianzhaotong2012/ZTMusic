@@ -11,6 +11,7 @@
 
 @interface ZTStyleACell : UICollectionViewCell <ZZFlexibleLayoutViewProtocol>
 
-@property (nonatomic, strong) ZTSongModel *songModel;
+@property (nonatomic, strong) ZZFLEXAngel *angel;
+@property (nonatomic, strong) NSArray *songArray;
 
 @end
