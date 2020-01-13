@@ -97,9 +97,9 @@
     };
     
     NSMutableArray *vcArray = [[NSMutableArray alloc] init];
-    [vcArray addObject:createItemVC([ZTLibraryViewController class], @"资料库", @"tabbar_library", @"tabbar_library")];
-    [vcArray addObject:createItemVC([ZTSearchViewController class], @"喜欢", @"tabbar_search", @"tabbar_search")];
-    [vcArray addObject:createItemVC([ZTExploreViewController class], @"发现", @"tabbar_search", @"tabbar_search")];
+//    [vcArray addObject:createItemVC([ZTLibraryViewController class], @"资料库", @"tabbar_library", @"tabbar_library")];
+//    [vcArray addObject:createItemVC([ZTSearchViewController class], @"喜欢", @"tabbar_favorite", @"tabbar_favorite")];
+    [vcArray addObject:createItemVC([ZTExploreViewController class], @"发现", @"tabbar_explore", @"tabbar_explore")];
     [vcArray addObject:createItemVC([ZTSearchViewController class], @"搜索", @"tabbar_search", @"tabbar_search")];
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
@@ -108,7 +108,7 @@
     tabBarController.tabBar.dk_tintColorPicker = DKColorPickerWithKey(TINT);
     [tabBarController setViewControllers:vcArray];
     
-    [tabBarController presentPopupBarWithContentViewController:[ZTMusicPlayViewController sharedInstance] animated:YES completion:nil];
+//    [tabBarController presentPopupBarWithContentViewController:[ZTMusicPlayViewController sharedInstance] animated:YES completion:nil];
     
     return tabBarController;
 }
