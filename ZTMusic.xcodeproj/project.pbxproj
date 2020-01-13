@@ -24,6 +24,9 @@
 		9489723423C86A55002DE07B /* UIViewController+LNPopupSupportPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489722123C86A55002DE07B /* UIViewController+LNPopupSupportPrivate.m */; };
 		9489723523C86A55002DE07B /* _LNPopupBase64Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489722323C86A55002DE07B /* _LNPopupBase64Utils.m */; };
 		9489723623C86A55002DE07B /* UIViewController+LNPopupSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489722423C86A55002DE07B /* UIViewController+LNPopupSupport.m */; };
+		9489724123CC4710002DE07B /* ZTExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489723F23CC4710002DE07B /* ZTExploreViewController.m */; };
+		9489724A23CC517D002DE07B /* ZTStyleACell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489724823CC517D002DE07B /* ZTStyleACell.m */; };
+		9489724D23CC9FCA002DE07B /* ZTExploreMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489724B23CC9FCA002DE07B /* ZTExploreMode.m */; };
 		BC763B9CAF96840676069576 /* libPods-ZTMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF950782CF6EF3F174EFF0D /* libPods-ZTMusic.a */; };
 		C22D73DC21197B8E00AB48AE /* ZTSearchResultTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D73DB21197B8E00AB48AE /* ZTSearchResultTitleCell.m */; };
 		C22D73DF21197C8F00AB48AE /* ZTArtistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D73DE21197C8F00AB48AE /* ZTArtistModel.m */; };
@@ -169,6 +172,12 @@
 		9489722323C86A55002DE07B /* _LNPopupBase64Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _LNPopupBase64Utils.m; sourceTree = "<group>"; };
 		9489722423C86A55002DE07B /* UIViewController+LNPopupSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LNPopupSupport.m"; sourceTree = "<group>"; };
 		9489722523C86A55002DE07B /* LNPopupCustomBarViewController+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LNPopupCustomBarViewController+Private.h"; sourceTree = "<group>"; };
+		9489723F23CC4710002DE07B /* ZTExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTExploreViewController.m; sourceTree = "<group>"; };
+		9489724023CC4710002DE07B /* ZTExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTExploreViewController.h; sourceTree = "<group>"; };
+		9489724823CC517D002DE07B /* ZTStyleACell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTStyleACell.m; sourceTree = "<group>"; };
+		9489724923CC517D002DE07B /* ZTStyleACell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTStyleACell.h; sourceTree = "<group>"; };
+		9489724B23CC9FCA002DE07B /* ZTExploreMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTExploreMode.m; sourceTree = "<group>"; };
+		9489724C23CC9FCA002DE07B /* ZTExploreMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTExploreMode.h; sourceTree = "<group>"; };
 		C22D73DA21197B8E00AB48AE /* ZTSearchResultTitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTSearchResultTitleCell.h; sourceTree = "<group>"; };
 		C22D73DB21197B8E00AB48AE /* ZTSearchResultTitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTSearchResultTitleCell.m; sourceTree = "<group>"; };
 		C22D73DD21197C8F00AB48AE /* ZTArtistModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTArtistModel.h; sourceTree = "<group>"; };
@@ -459,6 +468,51 @@
 			path = Private;
 			sourceTree = "<group>";
 		};
+		9489723723CC19D8002DE07B /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				9489723E23CC458D002DE07B /* Views */,
+				9489723D23CC4582002DE07B /* Models */,
+				9489723923CC1A17002DE07B /* Resources */,
+				9489723823CC19FE002DE07B /* ZTExploreViewController */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		9489723823CC19FE002DE07B /* ZTExploreViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9489724023CC4710002DE07B /* ZTExploreViewController.h */,
+				9489723F23CC4710002DE07B /* ZTExploreViewController.m */,
+			);
+			path = ZTExploreViewController;
+			sourceTree = "<group>";
+		};
+		9489723923CC1A17002DE07B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9489723D23CC4582002DE07B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9489724C23CC9FCA002DE07B /* ZTExploreMode.h */,
+				9489724B23CC9FCA002DE07B /* ZTExploreMode.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9489723E23CC458D002DE07B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9489724923CC517D002DE07B /* ZTStyleACell.h */,
+				9489724823CC517D002DE07B /* ZTStyleACell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C22D73E3211989EB00AB48AE /* Player */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +581,7 @@
 		C23110C4210F216600C9C076 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9489723723CC19D8002DE07B /* Explore */,
 				C23110C7210F218E00C9C076 /* Launcher */,
 				C231116F210F274C00C9C076 /* Web */,
 				C29EAC4A211012BA00EF0AB3 /* Library */,
@@ -1339,6 +1394,7 @@
 				C2311145210F262100C9C076 /* ZZFLEXAngel.m in Sources */,
 				C29EAC9D21104C9A00EF0AB3 /* TLSettingItem.m in Sources */,
 				C231113F210F262100C9C076 /* ZZFlexibleLayoutEmptyHeaderFooterView.m in Sources */,
+				9489724A23CC517D002DE07B /* ZTStyleACell.m in Sources */,
 				C231118D210F275B00C9C076 /* TLWebViewController.m in Sources */,
 				C2E583A921130E3700BB1330 /* ZTSearchResultViewController.m in Sources */,
 				9489723523C86A55002DE07B /* _LNPopupBase64Utils.m in Sources */,
@@ -1361,8 +1417,10 @@
 				C231114F210F262100C9C076 /* ZZButtonChainModel.m in Sources */,
 				C29EAC4221100BFF00EF0AB3 /* LCRefreshHeader.m in Sources */,
 				9489722A23C86A55002DE07B /* LNPopupInteractionPanGestureRecognizer.m in Sources */,
+				9489724123CC4710002DE07B /* ZTExploreViewController.m in Sources */,
 				9489723123C86A55002DE07B /* LNPopupItem.m in Sources */,
 				C231114B210F262100C9C076 /* ZZLabelChainModel.m in Sources */,
+				9489724D23CC9FCA002DE07B /* ZTExploreMode.m in Sources */,
 				C29EAC4421100BFF00EF0AB3 /* UIScrollView+TLLoadMoreFooter.m in Sources */,
 				C2311157210F262100C9C076 /* UIView+ZZFrame.m in Sources */,
 				C2311148210F262100C9C076 /* ZZFLEXAngel+UITableView.m in Sources */,

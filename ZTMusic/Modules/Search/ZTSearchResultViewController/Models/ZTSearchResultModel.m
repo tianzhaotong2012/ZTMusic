@@ -8,7 +8,7 @@
 
 #import "ZTSearchResultModel.h"
 
-@implementation ZTSearchResultModel
+@implementation ZTSearchResultModel : NSObject 
 
 + (NSDictionary *)mj_objectClassInArray
 {

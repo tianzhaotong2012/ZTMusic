@@ -12,6 +12,7 @@
 #import "ZTAppConfig.h"
 
 #import "ZTMusicPlayViewController.h"
+#import "ZTExploreViewController.h"
 #import "ZTLibraryViewController.h"
 #import "ZTSearchViewController.h"
 
@@ -97,6 +98,8 @@
     
     NSMutableArray *vcArray = [[NSMutableArray alloc] init];
     [vcArray addObject:createItemVC([ZTLibraryViewController class], @"资料库", @"tabbar_library", @"tabbar_library")];
+    [vcArray addObject:createItemVC([ZTSearchViewController class], @"喜欢", @"tabbar_search", @"tabbar_search")];
+    [vcArray addObject:createItemVC([ZTExploreViewController class], @"发现", @"tabbar_search", @"tabbar_search")];
     [vcArray addObject:createItemVC([ZTSearchViewController class], @"搜索", @"tabbar_search", @"tabbar_search")];
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
