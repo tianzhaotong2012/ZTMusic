@@ -81,9 +81,10 @@ typedef NS_ENUM(NSInteger, ZTExploreVCSectionType) {
             self.addCell(@"ZTExploreSectionTitleCell").toSection(i).withDataModel(@{@"title" : model.sectionTitle});
         }
         if (model.type == 1) {
-            self.addCell(@"ZTStyleACell").toSection(i).withDataModel(model.songs).selectedAction(^ (ZTSongModel *model) {
+            self.addCell(@"ZTStyleACell").toSection(i).withDataModel(model.songs).eventAction(^ id(NSInteger eventType, ZTSongModel *model) {
                 TLWebViewController *webVC = [[TLWebViewController alloc] initWithUrl:model.shareUrl];
                 [self.navigationController pushViewController:webVC animated:YES];
+                return nil;
             });
         }
         else if (model.type == 2) {
