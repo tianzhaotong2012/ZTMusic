@@ -10,6 +10,8 @@
 
 @interface ZTSearchResultAngel : ZZFLEXAngel
 
+@property(nonatomic,weak) UINavigationController *navigationController;
+
 - (void)requestSearch:(NSString *)word completeAction:(LCBlockComplete)completeAction;
 
 @end

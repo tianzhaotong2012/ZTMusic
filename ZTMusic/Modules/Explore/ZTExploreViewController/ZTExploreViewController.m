@@ -8,6 +8,7 @@
 
 #import "ZTExploreViewController.h"
 #import "ZTExploreMode.h"
+#import "ZTArtistViewController.h"
 
 typedef NS_ENUM(NSInteger, ZTExploreVCSectionType) {
     ZTExploreVCSectionTypeTop,
@@ -84,7 +85,11 @@ typedef NS_ENUM(NSInteger, ZTExploreVCSectionType) {
             });
         }
         else if (model.type == 2) {
-            self.addCells(@"ZTSearchResultArtistCell").toSection(i).withDataModelArray(model.artists);
+            self.addCells(@"ZTSearchResultArtistCell").toSection(i).withDataModelArray(model.artists).selectedAction(^ (ZTArtistModel *model) {
+                        ZTArtistViewController *artistVC = [[ZTArtistViewController alloc] init];
+                artistVC.artistId = model.artistId;
+                        [self.navigationController pushViewController:artistVC animated:YES];
+                    });;
         }
     }
     

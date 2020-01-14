@@ -9,6 +9,7 @@
 #import "ZTSearchResultAngel.h"
 #import "ZTSearchResultModel.h"
 #import "ZTMusicPlayViewController.h"
+#import "ZTArtistViewController.h"
 
 @interface ZTSearchResultAngel ()
 
@@ -55,7 +56,11 @@
             });
         }
         else if (model.type == 2) {
-            self.addCells(@"ZTSearchResultArtistCell").toSection(i).withDataModelArray(model.artists);
+            self.addCells(@"ZTSearchResultArtistCell").toSection(i).withDataModelArray(model.artists).selectedAction(^ (ZTArtistModel *model) {
+                    ZTArtistViewController *artistVC = [[ZTArtistViewController alloc] init];
+            artistVC.artistId = model.artistId;
+                    [self.navigationController pushViewController:artistVC animated:YES];
+                });;
         }
     }
     

@@ -28,6 +28,7 @@
     self.collectionView = self.view.addCollectionView(0).frame(self.view.bounds).backgroundColor([UIColor clearColor]).alwaysBounceVertical(YES).view;
     self.collectionView.dk_backgroundColorPicker = DKColorPickerWithKey(GRAY_BG);
     self.angel = [[ZTSearchResultAngel alloc] initWithHostView:self.collectionView];
+    self.angel.navigationController = self.navigationController;
 }
 
 - (void)startSearch:(NSString *)word
