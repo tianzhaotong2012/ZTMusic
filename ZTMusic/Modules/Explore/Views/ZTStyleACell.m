@@ -113,8 +113,8 @@
 - (id)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-      
-        self.imageView = self.contentView.addImageView(1).cornerRadius(5)
+        
+        self.imageView = self.contentView.addImageView(1).cornerRadius(5).borderWidth(BORDER_WIDTH_1PX).borderColor([UIColor colorGrayForSeperator].CGColor)
         .contentMode(UIViewContentModeScaleAspectFill).clipsToBounds(YES)
         .masonry(^ (MASConstraintMaker *make) {
             make.left.mas_equalTo(0);
