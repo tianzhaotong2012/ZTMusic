@@ -40,15 +40,20 @@
     self.eventAction = eventAction;
 }
 
+
 - (void)viewIndexPath:(NSIndexPath *)indexPath sectionItemCount:(NSInteger)count
 {
-    if (self.withLine) {
-        if (indexPath.row < count - 1) {
-            self.addSeparator(ZZSeparatorPositionBottom).beginAt(15);
-        }
-        else {
-            self.removeSeparator(ZZSeparatorPositionBottom);
-        }
+    if (indexPath.row == 1) {
+        self.addSeparator(ZZSeparatorPositionTop);
+    }
+    else {
+        self.removeSeparator(ZZSeparatorPositionTop);
+    }
+    if (indexPath.row == count - 1) {
+        self.addSeparator(ZZSeparatorPositionBottom);
+    }
+    else {
+        self.addSeparator(ZZSeparatorPositionBottom).beginAt(15);
     }
 }
 

@@ -10,6 +10,7 @@
 #import "ZTSearchResultModel.h"
 #import "ZTMusicPlayViewController.h"
 #import "ZTArtistViewController.h"
+#import "TLWebViewController.h"
 
 @interface ZTSearchResultAngel ()
 
@@ -52,7 +53,9 @@
         }
         if (model.type == 1) {
             self.addCells(@"ZTSearchResultSongCell").toSection(i).withDataModelArray(model.songs).selectedAction(^ (ZTSongModel *model) {
-                [[ZTMusicPlayViewController sharedInstance] startPlayMusic:model];
+                //[[ZTMusicPlayViewController sharedInstance] startPlayMusic:model];
+                TLWebViewController *webVC = [[TLWebViewController alloc] initWithUrl:model.shareUrl];
+                [self.navigationController pushViewController:webVC animated:YES];
             });
         }
         else if (model.type == 2) {

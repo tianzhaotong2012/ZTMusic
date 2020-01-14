@@ -10,7 +10,7 @@
 #import "ZTSongModel.h"
 
 @interface ZTStyleACell : UICollectionViewCell <ZZFlexibleLayoutViewProtocol>
-
+@property (nonatomic, copy) id (^eventAction)(NSInteger eventType, id data);
 @property (nonatomic, strong) ZZFLEXAngel *angel;
 @property (nonatomic, strong) NSArray *songArray;
 

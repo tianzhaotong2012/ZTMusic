@@ -9,6 +9,7 @@
 #import "ZTExploreViewController.h"
 #import "ZTExploreMode.h"
 #import "ZTArtistViewController.h"
+#import "TLWebViewController.h"
 
 typedef NS_ENUM(NSInteger, ZTExploreVCSectionType) {
     ZTExploreVCSectionTypeTop,
@@ -81,7 +82,8 @@ typedef NS_ENUM(NSInteger, ZTExploreVCSectionType) {
         }
         if (model.type == 1) {
             self.addCell(@"ZTStyleACell").toSection(i).withDataModel(model.songs).selectedAction(^ (ZTSongModel *model) {
-                
+                TLWebViewController *webVC = [[TLWebViewController alloc] initWithUrl:model.shareUrl];
+                [self.navigationController pushViewController:webVC animated:YES];
             });
         }
         else if (model.type == 2) {

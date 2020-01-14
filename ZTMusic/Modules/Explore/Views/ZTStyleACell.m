@@ -25,6 +25,11 @@
     return 228;
 }
 
+- (void)setViewEventAction:(id (^)(NSInteger, id))eventAction
+{
+    self.eventAction = eventAction;
+}
+
 - (void)setViewDataModel:(NSArray *)dataModel
 {
     if (dataModel == self.songArray) {
@@ -35,7 +40,10 @@
         NSInteger sectionType = 0;
         self.angel.addSection(sectionType).sectionInsets(UIEdgeInsetsMake(0, 15, 0, 5)).minimumLineSpacing(12).minimumInteritemSpacing(12);
         self.angel.addCells(@"ZTStyleAItemCell").toSection(sectionType).withDataModelArray(dataModel).selectedAction(^ (id data) {
-            
+           
+            if (self.eventAction) {
+                self.eventAction(0, data);
+            }
            
         });
     }
