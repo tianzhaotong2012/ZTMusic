@@ -17,7 +17,7 @@
     
     UIImage *image = [UIImage imageNamed:@"nav_back"] ;
     UIImageView *imageView = [[UIImageView alloc] init];
-    imageView.dk_imagePicker = DKImagePickerWithImages([image imageWithColor:HexColor(0x0078ff)], [image imageWithColor:HexColor(0xeeeeee)]);
+    imageView.dk_imagePicker = DKImagePickerWithImages([image imageWithColor:[UIColor colorPink]], [image imageWithColor:HexColor(0xeeeeee)]);
     [view addSubview:imageView];
     
     UILabel *label = [[UILabel alloc] init];
