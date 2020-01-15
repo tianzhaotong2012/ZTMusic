@@ -73,7 +73,11 @@ typedef NS_ENUM(NSInteger, ZTArtistVCSectionType) {
     self.addCell(@"ZTArtistDetailTopView").toSection(0).withDataModel(artistDetail);
    self.addSection(1);
 self.addCells(@"ZTSearchResultSongCell").toSection(1).withDataModelArray(artistDetail.songs).selectedAction(^ (ZTSongModel *model) {
-        TLWebViewController *webVC = [[TLWebViewController alloc] initWithUrl:model.shareUrl];
+        TLWebViewController *webVC = [[TLWebViewController alloc] initWithUrl:model.netSource];
+        webVC.navigationController = self.navigationController;
+        if (@available(iOS 11.0, *)) {
+            [self.navigationController.navigationBar setPrefersLargeTitles:false];
+        }
         [self.navigationController pushViewController:webVC animated:YES];
     });
     [self.collectionView reloadData];

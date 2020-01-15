@@ -11,6 +11,8 @@
 
 @interface TLWebViewController : UIViewController <WKNavigationDelegate, WKUIDelegate>
 
+@property(nonatomic,weak) UINavigationController *navigationController;
+
 @property (nonatomic, strong) WKWebView *webView;
 
 /// 是否使用网页标题作为nav标题，默认YES

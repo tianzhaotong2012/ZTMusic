@@ -34,6 +34,9 @@
 /// 分享链接
 @property (nonatomic, strong) NSString *shareUrl;
 
+/// 网络资源链接（比如QQ音乐 网易音乐链接）
+@property (nonatomic, strong) NSString *netSource;
+
 @end
 
 @interface ZTSongPreviewModel : NSObject

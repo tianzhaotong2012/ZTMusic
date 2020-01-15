@@ -82,7 +82,11 @@ typedef NS_ENUM(NSInteger, ZTExploreVCSectionType) {
         }
         if (model.type == 1) {
             self.addCell(@"ZTStyleACell").toSection(i).withDataModel(model.songs).eventAction(^ id(NSInteger eventType, ZTSongModel *model) {
-                TLWebViewController *webVC = [[TLWebViewController alloc] initWithUrl:model.shareUrl];
+                TLWebViewController *webVC = [[TLWebViewController alloc] initWithUrl:model.netSource];
+                webVC.navigationController = self.navigationController;
+                if (@available(iOS 11.0, *)) {
+                [self.navigationController.navigationBar setPrefersLargeTitles:false];
+                }
                 [self.navigationController pushViewController:webVC animated:YES];
                 return nil;
             });

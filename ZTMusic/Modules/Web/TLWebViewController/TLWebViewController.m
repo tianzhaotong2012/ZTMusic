@@ -100,6 +100,9 @@
 {
     [super viewWillDisappear:animated];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    if (@available(iOS 11.0, *)) {
+        [self.navigationController.navigationBar setPrefersLargeTitles:TRUE];
+    }
 }
 
 - (void)dealloc
@@ -425,7 +428,7 @@
 - (UIBarButtonItem *)backButtonItem
 {
     if (_backButtonItem == nil) {
-        _backButtonItem = [[UIBarButtonItem alloc] initWithBackTitle:@"返回" target:self action:@selector(navBackButotnDown)];
+        _backButtonItem = [[UIBarButtonItem alloc] initWithBackTitle:LOCSTR(@"返回") target:self action:@selector(navBackButotnDown)];
     }
     return _backButtonItem;
 }
@@ -433,7 +436,7 @@
 - (UIBarButtonItem *)closeButtonItem
 {
     if (_closeButtonItem == nil) {
-        _closeButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(navCloseButtonDown)];
+        _closeButtonItem = [[UIBarButtonItem alloc] initWithTitle:LOCSTR(@"关闭") style:UIBarButtonItemStylePlain target:self action:@selector(navCloseButtonDown)];
     }
     return _closeButtonItem;
 }
