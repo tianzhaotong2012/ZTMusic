@@ -240,7 +240,6 @@
     NSString *urlString = navigationAction.request.URL.absoluteString;
     if ([urlString hasPrefix:@"itms-apps://itunes.apple.com"]
         || [urlString hasPrefix:@"https://itunes.apple.com"]
-        || [urlString hasPrefix:@"itms-services:"]
         || [urlString hasPrefix:@"tel:"]
         || [urlString hasPrefix:@"mailto:"]
         || [urlString hasPrefix:@"mqqwpa:"]
