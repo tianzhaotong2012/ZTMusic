@@ -108,7 +108,8 @@
     tabBarController.tabBar.dk_tintColorPicker = DKColorPickerWithKey(TINT);
     [tabBarController setViewControllers:vcArray];
     
-//    [tabBarController presentPopupBarWithContentViewController:[ZTMusicPlayViewController sharedInstance] animated:YES completion:nil];
+    [tabBarController presentPopupBarWithContentViewController:[ZTMusicPlayViewController sharedInstance] animated:YES completion:nil];
+    
     
     return tabBarController;
 }

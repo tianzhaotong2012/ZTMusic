@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		940C5A7123E061E700D9E7C2 /* ZTMusicPlayViewTop.m in Sources */ = {isa = PBXBuildFile; fileRef = 940C5A7023E061E700D9E7C2 /* ZTMusicPlayViewTop.m */; };
 		9489722623C86A55002DE07B /* LNPopupControllerAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 948971FD23C86A54002DE07B /* LNPopupControllerAssets.xcassets */; };
 		9489722723C86A55002DE07B /* LNForwardingDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489720723C86A55002DE07B /* LNForwardingDelegate.m */; };
 		9489722823C86A55002DE07B /* LNPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489720823C86A55002DE07B /* LNPopupController.m */; };
@@ -137,6 +138,8 @@
 /* Begin PBXFileReference section */
 		5CF950782CF6EF3F174EFF0D /* libPods-ZTMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZTMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64C40966AD34FD3CB1D5DFAE /* Pods-ZTMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZTMusic/Pods-ZTMusic.release.xcconfig"; sourceTree = "<group>"; };
+		940C5A6F23E061E700D9E7C2 /* ZTMusicPlayViewTop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTMusicPlayViewTop.h; sourceTree = "<group>"; };
+		940C5A7023E061E700D9E7C2 /* ZTMusicPlayViewTop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTMusicPlayViewTop.m; sourceTree = "<group>"; };
 		948971FD23C86A54002DE07B /* LNPopupControllerAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LNPopupControllerAssets.xcassets; sourceTree = "<group>"; };
 		948971FE23C86A54002DE07B /* LNPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPopupController.h; sourceTree = "<group>"; };
 		9489720023C86A54002DE07B /* LNPopupCloseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPopupCloseButton.h; sourceTree = "<group>"; };
@@ -418,6 +421,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		940C5A6E23E060C000D9E7C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				940C5A6F23E061E700D9E7C2 /* ZTMusicPlayViewTop.h */,
+				940C5A7023E061E700D9E7C2 /* ZTMusicPlayViewTop.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		948971FC23C86A54002DE07B /* LNPopupController */ = {
 			isa = PBXGroup;
 			children = (
@@ -586,6 +598,7 @@
 		C22D73EF21199E8C00AB48AE /* ZTMusicPlayViewController */ = {
 			isa = PBXGroup;
 			children = (
+				940C5A6E23E060C000D9E7C2 /* Views */,
 				C22D73F021199EAC00AB48AE /* ZTMusicPlayViewController.h */,
 				C22D73F121199EAC00AB48AE /* ZTMusicPlayViewController.m */,
 			);
@@ -1424,6 +1437,7 @@
 				C29EAC8221104B5700EF0AB3 /* ZTSettingViewController.m in Sources */,
 				C2311150210F262100C9C076 /* ZZScrollViewChainModel.m in Sources */,
 				C2311162210F262100C9C076 /* ZZFLEXEditModel.mm in Sources */,
+				940C5A7123E061E700D9E7C2 /* ZTMusicPlayViewTop.m in Sources */,
 				C2311160210F262100C9C076 /* ZZFLEXAngel+EditExtension.m in Sources */,
 				C27FAAE721188799003795C6 /* ZTSearchResultModel.m in Sources */,
 				C231115B210F262100C9C076 /* ZZFlexibleLayoutViewController+Kernel.m in Sources */,
@@ -1657,7 +1671,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 935S3U2TW5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1670,6 +1684,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.musicleft.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1682,7 +1697,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 935S3U2TW5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1695,6 +1710,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.musicleft.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

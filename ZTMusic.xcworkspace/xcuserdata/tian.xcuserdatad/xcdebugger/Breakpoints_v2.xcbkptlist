@@ -85,16 +85,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B32F788A-18EF-48CA-B59B-809DA089137C"
+            uuid = "63B5E7A6-D242-46F6-8C36-C8818EAF7FE0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ZTMusic/Modules/Explore/ZTExploreViewController/ZTExploreViewController.m"
+            filePath = "ZTMusic/Modules/Player/ZTMusicPlayViewController/ZTMusicPlayViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "-requestExploreModuleWithCompleteAction:"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "-pauseButtonClick"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
