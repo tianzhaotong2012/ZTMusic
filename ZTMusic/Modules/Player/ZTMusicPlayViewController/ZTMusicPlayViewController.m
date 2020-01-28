@@ -77,7 +77,7 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
 {
     self.songModel = musicModel;
     //self.popupItem.leftBarButtonItems = @[self.pauseItem];
-    self.popupItem.rightBarButtonItems = @[ self.pauseItem ];
+    self.popupItem.leftBarButtonItems = @[ self.pauseItem ];
     
     self.popupItem.title = musicModel.title;
     //self.popupItem.subtitle = musicModel.artist.artistName;
@@ -101,7 +101,7 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
 - (void)playButtonClick
 {
     //[self.popupItem setLeftBarButtonItems:@[self.pauseItem]];
-    self.popupItem.rightBarButtonItems = @[ self.pauseItem ];
+    self.popupItem.leftBarButtonItems = @[ self.pauseItem ];
     [[ZTPlayerManager sharedInstance].player play];
     
     [self refreshUI];
@@ -110,7 +110,8 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
 - (void)pauseButtonClick
 {
     //[self.popupItem setLeftBarButtonItems:@[self.playItem]];
-    self.popupItem.rightBarButtonItems = @[ self.playItem ];
+    self.popupItem.leftBarButtonItems = @[ self.playItem ];
+    
     [[ZTPlayerManager sharedInstance].player pause];
     
     [self refreshUI];
@@ -175,7 +176,7 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
         }
         else
         {
-            self.popupItem.rightBarButtonItems = @[ self.playItem ];
+            self.popupItem.leftBarButtonItems = @[ self.playItem ];
             //self.popupItem.leftBarButtonItems = nil;
         }
     
