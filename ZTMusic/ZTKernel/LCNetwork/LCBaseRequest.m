@@ -87,7 +87,7 @@
     
     void (^failure)(NSURLSessionDataTask *, NSError *) = ^(NSURLSessionDataTask *task, NSError *error) {
         if (completeAction) {
-            completeAction(NO, @"网络请求失败");
+            completeAction(NO, LOCSTR(@"网络请求失败"));
         }
     };
     
@@ -148,7 +148,7 @@
     
     void (^failure)(NSURLSessionDataTask *, NSError *) = ^(NSURLSessionDataTask *task, NSError *error) {
         if (completeAction) {
-            completeAction(NO, @"网络请求失败");
+            completeAction(NO, LOCSTR(@"网络请求失败"));
         }
     };
     

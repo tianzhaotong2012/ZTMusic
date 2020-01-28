@@ -27,7 +27,7 @@
 
 - (instancetype)initWithModule:(NSString *)module method:(LCRequestMethod)method params:(NSDictionary *)params
 {
-    NSString *url = @"http://www.musicleft.com/wp-admin/admin-ajax.php";
+    NSString *url = @"https://www.musicleft.com/wp-admin/admin-ajax.php";
     NSMutableDictionary *dic = params ? params.mutableCopy : @{}.mutableCopy;
     [dic setObject:TLNoNilString(module) forKey:@"action"];
     return [self initWithUrl:url method:method params:dic];

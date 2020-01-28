@@ -32,3 +32,9 @@
 
 "返回" = "Back";
 "关闭" = "Close";
+
+"网络请求失败" = "Network Error";
+"请检查网络并开启授权网络访问" = "Please check network and allow app use";
+"退出去联网" = "Exit And Check Network";
+"立即重试" = "Retry Now";
+

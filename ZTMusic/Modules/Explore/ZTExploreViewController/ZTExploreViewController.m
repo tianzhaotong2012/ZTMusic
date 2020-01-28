@@ -58,11 +58,30 @@ typedef NS_ENUM(NSInteger, ZTExploreVCSectionType) {
                 [TLUIUtility showErrorHint:(NSString *)data];
             }
             else {
-                [TLUIUtility showErrorHint:@"网络请求失败"];
+                [TLUIUtility showAlertWithTitle:LOCSTR(@"网络请求失败") message:LOCSTR(@"请检查网络并开启授权网络访问") cancelButtonTitle:LOCSTR(@"退出去联网") otherButtonTitles:@[LOCSTR(@"立即重试")] actionHandler:^(NSInteger buttonIndex) {
+                    if(buttonIndex == 0){
+                        exit(0);
+                    }
+                    if(buttonIndex == 1){
+                        [self requestData];
+                    }
+                }
+                 ];
             }
         }
         if (completeAction) {
             completeAction(success, data);
+            if(success == NO){
+                [TLUIUtility showAlertWithTitle:LOCSTR(@"网络请求失败") message:LOCSTR(@"请检查网络并开启授权网络访问") cancelButtonTitle:LOCSTR(@"退出去联网") otherButtonTitles:@[LOCSTR(@"立即重试")] actionHandler:^(NSInteger buttonIndex) {
+                    if(buttonIndex == 0){
+                        exit(0);
+                    }
+                    if(buttonIndex == 1){
+                        [self requestData];
+                    }
+                }
+                 ];
+            }
         }
     }];
 }
