@@ -53,14 +53,19 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
     
     [[ZTPlayerManager sharedInstance] setStartPlayAction:^(ZTSongModel *songModel, CGFloat totalTime) {
         NSLog(@"[ZTPlayerManager] 开始播放，总时长：%.2lf", totalTime);
+        self.popupItem.title = LOCSTR(@"正在解析内容...");
     } progressAction:^(ZTSongModel *songModel, CGFloat currentTime, CGFloat totalTime) {
         NSLog(@"[ZTPlayerManager] 播放中，总时长：%.2lf，当前：%.2lf", totalTime, currentTime);
+        //self.popupItem.title = [songModel.title stringByAppendingFormat:@" %.2lf / %.2lf", currentTime, totalTime];
+        self.popupItem.title = songModel.title;
     } stopPlayAction:^(ZTSongModel *songModel, ZTPlayerStopType type) {
         NSLog(@"[ZTPlayerManager] 停止播放：%ld", type);
         [self.popupItem setLeftBarButtonItems:@[self.playItem]];
+        self.popupItem.title = songModel.title;
     }];
     
     [self loadPlayerVCSubviews];
+    [self refreshUI];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -85,6 +90,7 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
     self.popupItem.title = musicModel.title;
     //self.popupItem.subtitle = musicModel.artist.artistName;
     //self.popupItem.image = musicModel.posterImage;
+    self.popupItem.image = [UIImage imageNamed:@"AppIcon60x60@3x"];
     @weakify(self);
     [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:musicModel.poster.toURL options:SDWebImageDownloaderHighPriority progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, BOOL finished) {
         @strongify(self);
@@ -173,7 +179,9 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
         }
     
     self.popupItem.title = LOCSTR(@"未在播放");
-    self.popupItem.image = [UIImage imageNamed:@"genre7"];
+    self.popupItem.image = [UIImage imageNamed:@"AppIcon60x60@3x"];
+    self.popupBar.progressViewStyle = LNPopupBarProgressViewStyleTop;
+    self.popupItem.progress = 0.4;
 }
 
 @end

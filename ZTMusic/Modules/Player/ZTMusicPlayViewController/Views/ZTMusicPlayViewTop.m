@@ -31,9 +31,9 @@
 
 - (void)setViewDataModel:(ZTSongModel *)dataModel
 {
-    [self.imageView sd_setImageWithURL:dataModel.poster.toURL];
-    [self.titleLabel setText:LOCSTR(dataModel.title)];
-    [self.userLabel setText:LOCSTR(dataModel.artist.artistName)];
+    [self.imageView sd_setImageWithURL:dataModel.poster.toURL placeholderImage:[UIImage imageNamed:@"poster"]];
+    [self.titleLabel setText:![LOCSTR(dataModel.title) isEqual:@""]?LOCSTR(dataModel.title):LOCSTR(@"未在播放")];
+    [self.userLabel setText:![LOCSTR(dataModel.artist.artistName) isEqual:@""]?LOCSTR(dataModel.artist.artistName):LOCSTR(@"歌手")];
     [self setNeedsDisplay];
 }
 
