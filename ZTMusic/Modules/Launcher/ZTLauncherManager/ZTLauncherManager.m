@@ -75,6 +75,7 @@
     [window addSubview:vc.view];
     [window makeKeyAndVisible];
     [vc presentPopupBarWithContentViewController:[ZTMusicPlayViewController sharedInstance] animated:YES completion:nil];
+    vc.popupBar.progressViewStyle = LNPopupBarProgressViewStyleTop;//显示播放进度条
 }
 
 #pragma mark - # Getters

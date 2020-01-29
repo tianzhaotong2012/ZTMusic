@@ -58,6 +58,7 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
         NSLog(@"[ZTPlayerManager] 播放中，总时长：%.2lf，当前：%.2lf", totalTime, currentTime);
         //self.popupItem.title = [songModel.title stringByAppendingFormat:@" %.2lf / %.2lf", currentTime, totalTime];
         self.popupItem.title = songModel.title;
+        self.popupItem.progress = currentTime/totalTime;
     } stopPlayAction:^(ZTSongModel *songModel, ZTPlayerStopType type) {
         NSLog(@"[ZTPlayerManager] 停止播放：%ld", type);
         [self.popupItem setLeftBarButtonItems:@[self.playItem]];
@@ -180,8 +181,7 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
     
     self.popupItem.title = LOCSTR(@"未在播放");
     self.popupItem.image = [UIImage imageNamed:@"AppIcon60x60@3x"];
-    self.popupBar.progressViewStyle = LNPopupBarProgressViewStyleTop;
-    self.popupItem.progress = 0.4;
+    self.popupItem.progress = 0.0;
 }
 
 @end
