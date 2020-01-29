@@ -74,32 +74,34 @@ typedef NS_ENUM(NSInteger, ZTArtistVCSectionType) {
     self.addCell(@"ZTArtistDetailTopView").toSection(0).withDataModel(artistDetail);
    self.addSection(1);
 self.addCells(@"ZTSearchResultSongCell").toSection(1).withDataModelArray(artistDetail.songs).selectedAction(^ (ZTSongModel *model) {
-        //播放跳转
+        
+        //-----------------播放跳转-------------------------------------------
         //初始化一个UIAlertController的警告框
         UIAlertController *alertController = [[UIAlertController alloc] init];
         //初始化一个UIAlertController的警告框将要用到的UIAlertAction style cancle
-        UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-                NSLog(@"提示框上的按钮 cancle 被点击了");
+        UIAlertAction *cancle = [UIAlertAction actionWithTitle:LOCSTR(@"取消") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                NSLog(@"cancle 被点击了");
         }];
-            //初始化一个UIAlertController的警告框将要用到的UIAlertAction style Default
-            UIAlertAction *goPlay = [UIAlertAction actionWithTitle:@"试听（网络资源）" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        //初始化一个UIAlertController的警告框将要用到的UIAlertAction style Default
+        UIAlertAction *goPlay = [UIAlertAction actionWithTitle:LOCSTR(@"试听(网络资源)") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                 [[ZTMusicPlayViewController sharedInstance] startPlayMusic:model];
-            }];
-            //初始化一个UIAlertController的警告框将要用到的UIAlertAction style Default
-            UIAlertAction *goWeb = [UIAlertAction actionWithTitle:@"前往网页" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        }];
+        //初始化一个UIAlertController的警告框将要用到的UIAlertAction style Default
+        UIAlertAction *goWeb = [UIAlertAction actionWithTitle:LOCSTR(@"前往网页") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                 TLWebViewController *webVC = [[TLWebViewController alloc] initWithUrl:model.netSource];
                 webVC.navigationController = self.navigationController;
                 if (@available(iOS 11.0, *)) {
                     [self.navigationController.navigationBar setPrefersLargeTitles:false];
                 }
                 [self.navigationController pushViewController:webVC animated:YES];
-            }];
-            //将初始化好的UIAlertAction添加到UIAlertController中
-            [alertController addAction:cancle];
+        }];
+        //将初始化好的UIAlertAction添加到UIAlertController中
+        [alertController addAction:cancle];
             [alertController addAction:goPlay];
             [alertController addAction:goWeb];
-            //将初始化好的j提示框显示出来
-            [self presentViewController:alertController animated:true completion:nil];
+        //将初始化好的提示框显示出来
+        [self presentViewController:alertController animated:true completion:nil];
+    
     });
     [self.collectionView reloadData];
     

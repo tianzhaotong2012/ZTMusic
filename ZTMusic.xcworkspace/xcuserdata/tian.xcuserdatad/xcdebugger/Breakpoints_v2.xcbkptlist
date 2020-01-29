@@ -92,8 +92,8 @@
             filePath = "ZTMusic/Modules/Player/ZTMusicPlayViewController/ZTMusicPlayViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "-pauseButtonClick"
             landmarkType = "7">
          </BreakpointContent>
@@ -108,9 +108,9 @@
             filePath = "ZTMusic/Modules/Player/ZTMusicPlayViewController/ZTMusicPlayViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "-loadPlayerVCSubviews"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "-nextButtonClick"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -124,9 +124,25 @@
             filePath = "ZTMusic/Modules/Player/ZTMusicPlayViewController/ZTMusicPlayViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
-            landmarkName = "-loadPlayerVCSubviews"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "-nextButtonClick"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "054E8D2A-A7E0-4287-8923-E81CB17BD3A8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZTMusic/Modules/Player/ZTMusicPlayViewController/ZTMusicPlayViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "-playButtonClick"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

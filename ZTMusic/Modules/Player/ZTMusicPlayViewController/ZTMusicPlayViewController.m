@@ -45,8 +45,6 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
 - (void)loadView
 {
     [super loadView];
-    
-    [self loadPlayerVCSubviews];
 }
 
 - (void)viewDidLoad
@@ -62,6 +60,11 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
         [self.popupItem setLeftBarButtonItems:@[self.playItem]];
     }];
     
+    [self loadPlayerVCSubviews];
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
 }
 
 - (void)refreshUI{
@@ -101,7 +104,7 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
 - (void)playButtonClick
 {
     //[self.popupItem setLeftBarButtonItems:@[self.pauseItem]];
-    self.popupItem.leftBarButtonItems = @[ self.pauseItem ];
+    self.popupItem.leftBarButtonItems = @[ self.pauseItem ]; 
     [[ZTPlayerManager sharedInstance].player play];
     
     [self refreshUI];
@@ -125,11 +128,10 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
 #pragma mark - # UI
 - (void)loadPlayerVCSubviews
 {
-   
     UIBarButtonItem *(^createBarButton)(NSString *imageName, SEL selector) = ^UIBarButtonItem *(NSString *imageName, SEL selector) {
-        UIButton *button = UIButton.zz_create(0).image([UIImage imageNamed:imageName]).frame(CGRectMake(0, 0, 55, 55))
+        UIButton *button = UIButton.zz_create(0).image([UIImage imageNamed:imageName]).frame(CGRectMake(0, 0, 96, 55))
         .eventBlock(UIControlEventTouchUpInside, ^(UIButton *sender) {
-            
+
             [self performSelectorOnMainThread:selector withObject:nil waitUntilDone:NO];
         }).view;
         UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -139,29 +141,19 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
     self.playItem = createBarButton(@"play", @selector(playButtonClick));
     self.pauseItem = createBarButton(@"pause", @selector(pauseButtonClick));
     self.nextItem = createBarButton(@"nextFwd", @selector(nextButtonClick));
-//
-    self.popupItem.title = LOCSTR(@"未在播放");
-    self.popupItem.image = [UIImage imageNamed:@"genre7"];
+
+    
 //    self.popupItem.leftBarButtonItems = @[self.playItem];
 //    //self.popupItem.rightBarButtonItems = @[self.nextItem];
     
 //    UIBarButtonItem* play = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"play"] style:UIBarButtonItemStylePlain target:self action:@selector(playButtonClick:)];
-//        play.accessibilityLabel = NSLocalizedString(@"Play", @"");
-//        play.accessibilityIdentifier = @"PlayButton";
-//        play.accessibilityTraits = UIAccessibilityTraitButton;
-//        
-//        UIBarButtonItem* stop = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"stop"] style:UIBarButtonItemStylePlain target:self action:@selector(pauseButtonClick:)];
-//        stop.accessibilityLabel = NSLocalizedString(@"Stop", @"");
-//        stop.accessibilityIdentifier = @"StopButton";
-//        stop.accessibilityTraits = UIAccessibilityTraitButton;
-//        
+//
+//        UIBarButtonItem* pause = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"pause"] style:UIBarButtonItemStylePlain target:self action:@selector(pauseButtonClick:)];
+//
 //        UIBarButtonItem* next = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nextFwd"] style:UIBarButtonItemStylePlain target:self action:@selector(nextButtonClick:)];
-//        next.accessibilityLabel = NSLocalizedString(@"Next Track", @"");
-//        next.accessibilityIdentifier = @"NextButton";
-//        next.accessibilityTraits = UIAccessibilityTraitButton;
-       
+//
 //    self.playItem = play;
-//    self.pauseItem = stop;
+//    self.pauseItem = pause;
 //    self.nextItem = next;
     
     NSString* const PopupSettingsBarStyle = @"PopupSettingsBarStyle";
@@ -177,9 +169,11 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
         else
         {
             self.popupItem.leftBarButtonItems = @[ self.playItem ];
-            //self.popupItem.leftBarButtonItems = nil;
+            self.popupItem.rightBarButtonItems = nil;
         }
     
+    self.popupItem.title = LOCSTR(@"未在播放");
+    self.popupItem.image = [UIImage imageNamed:@"genre7"];
 }
 
 @end
