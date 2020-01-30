@@ -76,6 +76,7 @@
     [window makeKeyAndVisible];
     [vc presentPopupBarWithContentViewController:[ZTMusicPlayViewController sharedInstance] animated:YES completion:nil];
     vc.popupBar.progressViewStyle = LNPopupBarProgressViewStyleTop;//显示播放进度条
+    vc.popupBar.backgroundColor = [UIColor colorWithWhite:230.0 / 255.0 alpha:0.95];
 }
 
 #pragma mark - # Getters

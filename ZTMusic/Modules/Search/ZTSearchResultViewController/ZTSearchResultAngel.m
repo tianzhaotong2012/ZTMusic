@@ -56,7 +56,12 @@
                 //[[ZTMusicPlayViewController sharedInstance] startPlayMusic:model];
                 //-----------------播放跳转-------------------------------------------
                 //初始化一个UIAlertController的警告框
-                UIAlertController *alertController = [[UIAlertController alloc] init];
+                UIAlertController *alertController;
+                if(IS_IPHONE){
+                     alertController = [[UIAlertController alloc] init];
+                }else{
+                     alertController = [UIAlertController alertControllerWithTitle:nil message:nil  preferredStyle:UIAlertControllerStyleAlert];
+                }
                 //初始化一个UIAlertController的警告框将要用到的UIAlertAction style cancle
                 UIAlertAction *cancle = [UIAlertAction actionWithTitle:LOCSTR(@"取消") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
                         NSLog(@"cancle 被点击了");
