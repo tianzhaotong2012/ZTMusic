@@ -23,6 +23,7 @@
 @property (nonatomic, strong) UIBarButtonItem *playItem;
 @property (nonatomic, strong) UIBarButtonItem *pauseItem;
 @property (nonatomic, strong) UIBarButtonItem *nextItem;
+@property (nonatomic, strong) UIBarButtonItem *loadingItem;
 
 @end
 
@@ -59,9 +60,12 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
         //self.popupItem.title = [songModel.title stringByAppendingFormat:@" %.2lf / %.2lf", currentTime, totalTime];
         self.popupItem.title = songModel.title;
         self.popupItem.progress = currentTime/totalTime;
+        if(self.popupItem.leftBarButtonItems.firstObject == self.loadingItem){
+                 self.popupItem.leftBarButtonItems = @[ self.pauseItem ];
+        }
     } stopPlayAction:^(ZTSongModel *songModel, ZTPlayerStopType type) {
         NSLog(@"[ZTPlayerManager] 停止播放：%ld", type);
-        [self.popupItem setLeftBarButtonItems:@[self.playItem]];
+        self.popupItem.leftBarButtonItems = @[ self.playItem ];
         self.popupItem.title = songModel.title;
     }];
     
@@ -86,7 +90,7 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
 {
     self.songModel = musicModel;
     //self.popupItem.leftBarButtonItems = @[self.pauseItem];
-    self.popupItem.leftBarButtonItems = @[ self.pauseItem ];
+    self.popupItem.leftBarButtonItems = @[ self.loadingItem ];
     
     self.popupItem.title = musicModel.title;
     //self.popupItem.subtitle = musicModel.artist.artistName;
@@ -149,6 +153,12 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
     self.pauseItem = createBarButton(@"pause", @selector(pauseButtonClick));
     self.nextItem = createBarButton(@"nextFwd", @selector(nextButtonClick));
 
+    UIActivityIndicatorView* loadingView = [[UIActivityIndicatorView alloc] initWithFrame:(CGRectMake(0, 0, 96, 55))];
+    loadingView.color = [UIColor colorPink];
+    [loadingView startAnimating];
+    self.loadingItem = [[UIBarButtonItem alloc] initWithCustomView:loadingView];
+    
+    
     
 //    self.popupItem.leftBarButtonItems = @[self.playItem];
 //    //self.popupItem.rightBarButtonItems = @[self.nextItem];

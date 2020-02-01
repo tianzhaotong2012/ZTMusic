@@ -49,6 +49,7 @@
 
 - (void)playWithUrl:(NSString *)url
 {
+    url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [self setUrl:url];
     [self play];
 }
