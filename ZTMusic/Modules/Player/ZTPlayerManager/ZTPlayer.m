@@ -8,6 +8,7 @@
 
 #import "ZTPlayer.h"
 #import <AVFoundation/AVFoundation.h>
+#import <KTVHTTPCache/KTVHTTPCache.h>
 
 @interface ZTPlayer ()
 
@@ -30,7 +31,33 @@
         
         [self p_initAVPlayer];
     }
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self setupHTTPCache];
+    });
+    
     return self;
+}
+
+- (void)setupHTTPCache
+{
+    [KTVHTTPCache logSetConsoleLogEnable:YES];
+    NSError *error = nil;
+    [KTVHTTPCache proxyStart:&error];
+    if (error) {
+        NSLog(@"Proxy Start Failure, %@", error);
+    } else {
+        NSLog(@"Proxy Start Success");
+    }
+    [KTVHTTPCache encodeSetURLConverter:^NSURL *(NSURL *URL) {
+        NSLog(@"URL Filter reviced URL : %@", URL);
+        return URL;
+    }];
+    [KTVHTTPCache downloadSetUnacceptableContentTypeDisposer:^BOOL(NSURL *URL, NSString *contentType) {
+        NSLog(@"Unsupport Content-Type Filter reviced URL : %@, %@", URL, contentType);
+        return NO;
+    }];
 }
 
 - (void)dealloc
@@ -62,13 +89,21 @@
 
 - (void)setUrl:(NSString *)url
 {
+    //加入代理缓存
+    Boolean is = [KTVHTTPCache proxyIsRunning];
+    NSURL *proxyURL = [KTVHTTPCache proxyURLWithOriginalURL:[NSURL URLWithString:url]];
+    if (@available(iOS 10.0, *)) {
+        self.player.automaticallyWaitsToMinimizeStalling = NO;//关闭缓冲足够多
+    } else {
+        // Fallback on earlier versions
+    }
+    
     _url = url;
     if (self.playerItem) {
         [self.playerItem removeObserver:self forKeyPath:@"status"];
     }
-    self.playerItem = [[AVPlayerItem alloc] initWithURL:self.url.toURL];
+    self.playerItem = [[AVPlayerItem alloc] initWithURL:proxyURL];
     [self.playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
-    
     [self.player replaceCurrentItemWithPlayerItem:self.playerItem];
 }
 

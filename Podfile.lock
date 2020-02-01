@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - CocoaAsyncSocket (7.6.3)
   - DKNightVersion (2.4.3):
     - DKNightVersion/Core (= 2.4.3)
     - DKNightVersion/CoreAnimation (= 2.4.3)
@@ -28,16 +29,22 @@ PODS:
   - DKNightVersion/UIKit (2.4.3):
     - DKNightVersion/Core
   - IQKeyboardManager (6.1.1)
-  - JCore (1.2.0)
+  - JCore (1.2.6)
   - JPush (3.0.9):
     - JCore (~> 1.2.0)
+  - KTVCocoaHTTPServer (1.0.0):
+    - CocoaAsyncSocket
+  - KTVHTTPCache (2.0.1):
+    - KTVCocoaHTTPServer
   - Masonry (1.1.0)
-  - MJExtension (3.0.15.1)
-  - MJRefresh (3.1.15.3)
+  - MJExtension (3.0.17)
+  - MJRefresh (3.1.15.7)
   - OpenUDID (1.0.0)
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
+  - SQLiteRepairKit (1.2.2):
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
   - SVProgressHUD (2.2.5)
   - TLKit (0.0.27):
     - TLKit/TLCategories (= 0.0.27)
@@ -51,7 +58,6 @@ PODS:
     - TLKit/TLCategories/Foundation/NSBundle (= 0.0.27)
     - TLKit/TLCategories/Foundation/NSData (= 0.0.27)
     - TLKit/TLCategories/Foundation/NSDate (= 0.0.27)
-    - TLKit/TLCategories/Foundation/NSDictionary (= 0.0.27)
     - TLKit/TLCategories/Foundation/NSDictionary (= 0.0.27)
     - TLKit/TLCategories/Foundation/NSFileManager (= 0.0.27)
     - TLKit/TLCategories/Foundation/NSMutableArray (= 0.0.27)
@@ -126,14 +132,11 @@ PODS:
     - TLKit/TLCategories/UIKit/UIAlertView
     - TLKit/TLCategories/UIKit/UIWindow
   - TLKit/TLShortcut (0.0.27)
-  - UICKeyChainStore (2.1.1)
-  - UMCAnalytics (5.5.0):
-    - UMCCommon
-  - UMCCommon (1.4.3)
-  - UMCSecurityPlugins (1.0.6)
-  - WCDB (1.0.6):
-    - WCDB/sqlcipher (= 1.0.6)
-  - WCDB/sqlcipher (1.0.6)
+  - UICKeyChainStore (2.1.2)
+  - WCDB (1.0.7.5):
+    - SQLiteRepairKit (~> 1.2.0)
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - WCDBOptimizedSQLCipher (1.2.1)
   - YYCache (1.0.4)
   - YYText (1.0.7)
 
@@ -142,50 +145,74 @@ DEPENDENCIES:
   - DKNightVersion (~> 2.4.3)
   - IQKeyboardManager (~> 6.1.1)
   - JPush (~> 3.0.9)
+  - KTVHTTPCache (~> 2.0.0)
   - Masonry (~> 1.1.0)
   - MJExtension (~> 3.0.15)
   - MJRefresh (~> 3.1.15.3)
   - OpenUDID (~> 1.0.0)
   - SDWebImage (~> 4.3.1)
-  - TLKit (from `https://github.com/tbl00c/TLKit.git`)
+  - TLKit (from `https://github.com/tbl00c/TLKit.git`, tag `0.0.27`)
   - UICKeyChainStore (~> 2.1.1)
-  - UMCAnalytics
-  - UMCCommon (~> 1.4.1)
-  - UMCSecurityPlugins
   - WCDB (~> 1.0.6)
   - YYCache (~> 1.0.4)
   - YYText (~> 1.0.7)
 
+SPEC REPOS:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+    - AFNetworking
+    - CocoaAsyncSocket
+    - DKNightVersion
+    - IQKeyboardManager
+    - JCore
+    - JPush
+    - KTVCocoaHTTPServer
+    - KTVHTTPCache
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - OpenUDID
+    - SDWebImage
+    - SQLiteRepairKit
+    - SVProgressHUD
+    - UICKeyChainStore
+    - WCDB
+    - WCDBOptimizedSQLCipher
+    - YYCache
+    - YYText
+
 EXTERNAL SOURCES:
   TLKit:
     :git: https://github.com/tbl00c/TLKit.git
+    :tag: 0.0.27
 
 CHECKOUT OPTIONS:
   TLKit:
-    :commit: b3b9c878427f82873a077694bdbd3571edd072c0
     :git: https://github.com/tbl00c/TLKit.git
+    :tag: 0.0.27
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
   DKNightVersion: eaa80cc4014b4bae7d4b535fd87ecc6a3c2767b3
   IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
-  JCore: b52e3dd73625eec70afd1244bb9c41038aa06087
+  JCore: cae516dd2bf1a73b578ce6e1065abd49e709e0f7
   JPush: 48041e8c5ad2ef9b48709eb0888af9640b36e9b0
+  KTVCocoaHTTPServer: df8d7b861e603ff8037e9b2138aca2563a6b768d
+  KTVHTTPCache: 588c3eb16f6bd1e6fde1e230dabfb7bd4e490a4d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
-  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+  MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TLKit: e06e6018c04c6c13a96faefe980a13ff124ebeb1
-  UICKeyChainStore: 239558492fa260531a0774cfc611ea83a6eaff3a
-  UMCAnalytics: 4667788559a72f2fa5077117d1b8802a3b6eb6bb
-  UMCCommon: ac0bc01a46a5640bbd58646448f455b4c5404bf0
-  UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
-  WCDB: 4d2926bf695b2e00d785b50afd32c2dcc8cbbd98
+  UICKeyChainStore: 85db518bb1d294366d15ec9b92a416c4e670518f
+  WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
+  WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 3f4f28279f777ca048d3146f5756d589a02e818d
+PODFILE CHECKSUM: 1e77e8d384f3fe64529aff7eabdc1c808da13341
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.8.4

@@ -26,7 +26,7 @@
 
 + (CGFloat)viewHeightByDataModel:(id)dataModel
 {
-    return 418.0f;
+    return SCREEN_WIDTH;
 }
 
 - (void)setViewDataModel:(ZTSongModel *)dataModel
@@ -66,10 +66,10 @@
         self.imageView = self.contentView.addImageView(1).cornerRadius(10).borderWidth(BORDER_WIDTH_1PX).borderColor([UIColor colorGrayForSeperator].CGColor)
         .contentMode(UIViewContentModeScaleAspectFill).clipsToBounds(YES)
         .masonry(^ (MASConstraintMaker *make) {
-            make.left.mas_equalTo(30);
+            make.left.mas_equalTo(50);
             make.top.mas_equalTo(40);
             make.bottom.mas_equalTo(-90);
-            make.right.mas_equalTo(-30);
+            make.right.mas_equalTo(-50);
         })
         .view;
         
