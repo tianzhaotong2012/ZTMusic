@@ -104,6 +104,8 @@
     }
     self.playerItem = [[AVPlayerItem alloc] initWithURL:proxyURL];
     [self.playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
+    [self.playerItem addObserver:self forKeyPath:@"playbackBufferEmpty" options:NSKeyValueObservingOptionNew context:nil];
+    [self.playerItem addObserver:self forKeyPath:@"playbackLikelyToKeepUp" options:NSKeyValueObservingOptionNew context:nil];
     [self.player replaceCurrentItemWithPlayerItem:self.playerItem];
 }
 
@@ -135,6 +137,13 @@
                 self.stopPlayAction(self, ZTPlayerStopTypeFailed);
             }
         }
+    }else if ([keyPath isEqualToString:@"playbackBufferEmpty"]) { //监听播放器在缓冲数据的状态
+                NSLog(@"缓冲不足暂停了");
+                
+    } else if ([keyPath isEqualToString:@"playbackLikelyToKeepUp"]) {
+                NSLog(@"缓冲达到可播放程度了");
+                //由于 AVPlayer缓存不足就会自动暂停，所以缓存充足了需要手动播放，才能继续播放
+                
     }
 }
 
