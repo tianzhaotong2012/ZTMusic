@@ -39,18 +39,18 @@
 
 - (void)viewIndexPath:(NSIndexPath *)indexPath sectionItemCount:(NSInteger)count
 {
-    if (indexPath.row == 1) {
-        self.addSeparator(ZZSeparatorPositionTop);
-    }
-    else {
-        self.removeSeparator(ZZSeparatorPositionTop);
-    }
-    if (indexPath.row == count - 1) {
-        self.addSeparator(ZZSeparatorPositionBottom);
-    }
-    else {
-        self.addSeparator(ZZSeparatorPositionBottom).beginAt(15);
-    }
+//    if (indexPath.row == 1) {
+//        self.addSeparator(ZZSeparatorPositionTop);
+//    }
+//    else {
+//        self.removeSeparator(ZZSeparatorPositionTop);
+//    }
+//    if (indexPath.row == count - 1) {
+//        self.addSeparator(ZZSeparatorPositionBottom);
+//    }
+//    else {
+//        self.addSeparator(ZZSeparatorPositionBottom).beginAt(15);
+//    }
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
