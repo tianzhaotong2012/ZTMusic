@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,9 @@
 		9489725823CD6866002DE07B /* ZTArtistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489725623CD6865002DE07B /* ZTArtistViewController.m */; };
 		9489725E23CD9AE4002DE07B /* ZTArtistDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489725D23CD9AE4002DE07B /* ZTArtistDetailModel.m */; };
 		9489726123CDC5D7002DE07B /* ZTArtistDetailTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489726023CDC5D6002DE07B /* ZTArtistDetailTopView.m */; };
+		94C49F6E23F17DC00084CC32 /* ZTForYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C49F6D23F17DC00084CC32 /* ZTForYouViewController.m */; };
+		94C49F7123F17E560084CC32 /* ZTForYouCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C49F7023F17E560084CC32 /* ZTForYouCell.m */; };
+		94C49F7423F17E9D0084CC32 /* ZTForYouModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C49F7323F17E9D0084CC32 /* ZTForYouModel.m */; };
 		BC763B9CAF96840676069576 /* libPods-ZTMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF950782CF6EF3F174EFF0D /* libPods-ZTMusic.a */; };
 		C22D73DC21197B8E00AB48AE /* ZTSearchResultTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D73DB21197B8E00AB48AE /* ZTSearchResultTitleCell.m */; };
 		C22D73DF21197C8F00AB48AE /* ZTArtistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D73DE21197C8F00AB48AE /* ZTArtistModel.m */; };
@@ -193,6 +196,12 @@
 		9489725D23CD9AE4002DE07B /* ZTArtistDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTArtistDetailModel.m; sourceTree = "<group>"; };
 		9489725F23CDC5D6002DE07B /* ZTArtistDetailTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTArtistDetailTopView.h; sourceTree = "<group>"; };
 		9489726023CDC5D6002DE07B /* ZTArtistDetailTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTArtistDetailTopView.m; sourceTree = "<group>"; };
+		94C49F6C23F17DC00084CC32 /* ZTForYouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTForYouViewController.h; sourceTree = "<group>"; };
+		94C49F6D23F17DC00084CC32 /* ZTForYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTForYouViewController.m; sourceTree = "<group>"; };
+		94C49F6F23F17E560084CC32 /* ZTForYouCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTForYouCell.h; sourceTree = "<group>"; };
+		94C49F7023F17E560084CC32 /* ZTForYouCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTForYouCell.m; sourceTree = "<group>"; };
+		94C49F7223F17E9D0084CC32 /* ZTForYouModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTForYouModel.h; sourceTree = "<group>"; };
+		94C49F7323F17E9D0084CC32 /* ZTForYouModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTForYouModel.m; sourceTree = "<group>"; };
 		C22D73DA21197B8E00AB48AE /* ZTSearchResultTitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTSearchResultTitleCell.h; sourceTree = "<group>"; };
 		C22D73DB21197B8E00AB48AE /* ZTSearchResultTitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTSearchResultTitleCell.m; sourceTree = "<group>"; };
 		C22D73DD21197C8F00AB48AE /* ZTArtistModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTArtistModel.h; sourceTree = "<group>"; };
@@ -576,6 +585,51 @@
 			path = ZTArtistViewController;
 			sourceTree = "<group>";
 		};
+		94C49F6723F17C7A0084CC32 /* ForYou */ = {
+			isa = PBXGroup;
+			children = (
+				94C49F6B23F17CF10084CC32 /* ZTForYouViewController */,
+				94C49F6A23F17CCA0084CC32 /* Resources */,
+				94C49F6923F17CBF0084CC32 /* Models */,
+				94C49F6823F17CB50084CC32 /* Views */,
+			);
+			path = ForYou;
+			sourceTree = "<group>";
+		};
+		94C49F6823F17CB50084CC32 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				94C49F6F23F17E560084CC32 /* ZTForYouCell.h */,
+				94C49F7023F17E560084CC32 /* ZTForYouCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		94C49F6923F17CBF0084CC32 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				94C49F7223F17E9D0084CC32 /* ZTForYouModel.h */,
+				94C49F7323F17E9D0084CC32 /* ZTForYouModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		94C49F6A23F17CCA0084CC32 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		94C49F6B23F17CF10084CC32 /* ZTForYouViewController */ = {
+			isa = PBXGroup;
+			children = (
+				94C49F6C23F17DC00084CC32 /* ZTForYouViewController.h */,
+				94C49F6D23F17DC00084CC32 /* ZTForYouViewController.m */,
+			);
+			path = ZTForYouViewController;
+			sourceTree = "<group>";
+		};
 		C22D73E3211989EB00AB48AE /* Player */ = {
 			isa = PBXGroup;
 			children = (
@@ -645,6 +699,7 @@
 		C23110C4210F216600C9C076 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				94C49F6723F17C7A0084CC32 /* ForYou */,
 				9489725223CD6567002DE07B /* Artist */,
 				9489723723CC19D8002DE07B /* Explore */,
 				C23110C7210F218E00C9C076 /* Launcher */,
@@ -1358,7 +1413,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n";
+			shellScript = "
+";
 		};
 		E04B3E0868081542E56A3F91 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1438,6 +1494,7 @@
 				C231113F210F262100C9C076 /* ZZFlexibleLayoutEmptyHeaderFooterView.m in Sources */,
 				9489724A23CC517D002DE07B /* ZTStyleACell.m in Sources */,
 				C231118D210F275B00C9C076 /* TLWebViewController.m in Sources */,
+				94C49F7423F17E9D0084CC32 /* ZTForYouModel.m in Sources */,
 				C2E583A921130E3700BB1330 /* ZTSearchResultViewController.m in Sources */,
 				9489725823CD6866002DE07B /* ZTArtistViewController.m in Sources */,
 				9489723523C86A55002DE07B /* _LNPopupBase64Utils.m in Sources */,
@@ -1477,6 +1534,7 @@
 				C2311159210F262100C9C076 /* UIControl+ZZEvent.m in Sources */,
 				C256F4F7211AEB2600BEFC26 /* ZTPlayerManager.m in Sources */,
 				C29EACB421106A6500EF0AB3 /* ZTRequest.m in Sources */,
+				94C49F7123F17E560084CC32 /* ZTForYouCell.m in Sources */,
 				C29EAC9A21104C9A00EF0AB3 /* TLSettingItemTextCell.m in Sources */,
 				9489726123CDC5D7002DE07B /* ZTArtistDetailTopView.m in Sources */,
 				C2B0AC1F2112DCD60047BE89 /* ZTSearchSectionTitleCell.m in Sources */,
@@ -1485,6 +1543,7 @@
 				C2311164210F262100C9C076 /* LCRouterUrlDAO.m in Sources */,
 				C2311151210F262100C9C076 /* ZZImageViewChainModel.m in Sources */,
 				C231115D210F262100C9C076 /* ZZFlexibleLayoutViewController+OldAPI.m in Sources */,
+				94C49F6E23F17DC00084CC32 /* ZTForYouViewController.m in Sources */,
 				C23110D4210F22DE00C9C076 /* ZTLauncherManager.m in Sources */,
 				C2311153210F262100C9C076 /* ZZTextViewChainModel.m in Sources */,
 				C22D73DC21197B8E00AB48AE /* ZTSearchResultTitleCell.m in Sources */,
@@ -1647,7 +1706,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 935S3U2TW5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1660,7 +1719,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.musicleft.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1673,7 +1732,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 935S3U2TW5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1686,7 +1745,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.musicleft.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
