@@ -35,6 +35,7 @@
 		94C49F6E23F17DC00084CC32 /* ZTForYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C49F6D23F17DC00084CC32 /* ZTForYouViewController.m */; };
 		94C49F7123F17E560084CC32 /* ZTForYouCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C49F7023F17E560084CC32 /* ZTForYouCell.m */; };
 		94C49F7423F17E9D0084CC32 /* ZTForYouModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C49F7323F17E9D0084CC32 /* ZTForYouModel.m */; };
+		94C49F7623F19AF30084CC32 /* Search.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94C49F7523F19AF30084CC32 /* Search.xcassets */; };
 		BC763B9CAF96840676069576 /* libPods-ZTMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF950782CF6EF3F174EFF0D /* libPods-ZTMusic.a */; };
 		C22D73DC21197B8E00AB48AE /* ZTSearchResultTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D73DB21197B8E00AB48AE /* ZTSearchResultTitleCell.m */; };
 		C22D73DF21197C8F00AB48AE /* ZTArtistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D73DE21197C8F00AB48AE /* ZTArtistModel.m */; };
@@ -114,7 +115,6 @@
 		C29EAC4921100CA800EF0AB3 /* ZTAppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EAC4821100CA800EF0AB3 /* ZTAppConfig.m */; };
 		C29EAC4F2110134200EF0AB3 /* ZTLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EAC4E2110134200EF0AB3 /* ZTLibraryViewController.m */; };
 		C29EAC532110135900EF0AB3 /* ZTSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EAC522110135900EF0AB3 /* ZTSearchViewController.m */; };
-		C29EAC562110148100EF0AB3 /* Search.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C29EAC552110148100EF0AB3 /* Search.xcassets */; };
 		C29EAC6A2110474600EF0AB3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C29EAC6C2110474600EF0AB3 /* Localizable.strings */; };
 		C29EAC772110487A00EF0AB3 /* UINavigationBar+Night.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EAC702110487A00EF0AB3 /* UINavigationBar+Night.m */; };
 		C29EAC792110487A00EF0AB3 /* UIViewController+Night.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EAC732110487A00EF0AB3 /* UIViewController+Night.m */; };
@@ -202,6 +202,7 @@
 		94C49F7023F17E560084CC32 /* ZTForYouCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTForYouCell.m; sourceTree = "<group>"; };
 		94C49F7223F17E9D0084CC32 /* ZTForYouModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTForYouModel.h; sourceTree = "<group>"; };
 		94C49F7323F17E9D0084CC32 /* ZTForYouModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTForYouModel.m; sourceTree = "<group>"; };
+		94C49F7523F19AF30084CC32 /* Search.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Search.xcassets; sourceTree = "<group>"; };
 		C22D73DA21197B8E00AB48AE /* ZTSearchResultTitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTSearchResultTitleCell.h; sourceTree = "<group>"; };
 		C22D73DB21197B8E00AB48AE /* ZTSearchResultTitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTSearchResultTitleCell.m; sourceTree = "<group>"; };
 		C22D73DD21197C8F00AB48AE /* ZTArtistModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTArtistModel.h; sourceTree = "<group>"; };
@@ -364,7 +365,6 @@
 		C29EAC4E2110134200EF0AB3 /* ZTLibraryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTLibraryViewController.m; sourceTree = "<group>"; };
 		C29EAC512110135900EF0AB3 /* ZTSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTSearchViewController.h; sourceTree = "<group>"; };
 		C29EAC522110135900EF0AB3 /* ZTSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTSearchViewController.m; sourceTree = "<group>"; };
-		C29EAC552110148100EF0AB3 /* Search.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Search.xcassets; sourceTree = "<group>"; };
 		C29EAC6B2110474600EF0AB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C29EAC6F2110487A00EF0AB3 /* UIViewController+Night.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Night.h"; sourceTree = "<group>"; };
 		C29EAC702110487A00EF0AB3 /* UINavigationBar+Night.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Night.m"; sourceTree = "<group>"; };
@@ -1201,7 +1201,7 @@
 		C29EAC542110146E00EF0AB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C29EAC552110148100EF0AB3 /* Search.xcassets */,
+				94C49F7523F19AF30084CC32 /* Search.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1371,9 +1371,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C29EAC8521104B7100EF0AB3 /* Utilities.xcassets in Resources */,
+				94C49F7623F19AF30084CC32 /* Search.xcassets in Resources */,
 				C29EAC6A2110474600EF0AB3 /* Localizable.strings in Resources */,
 				9489722623C86A55002DE07B /* LNPopupControllerAssets.xcassets in Resources */,
-				C29EAC562110148100EF0AB3 /* Search.xcassets in Resources */,
 				C256F4EF211AC75B00BEFC26 /* Library.xcassets in Resources */,
 				C23110AF210EF86800C9C076 /* LaunchScreen.storyboard in Resources */,
 				C22D73F52119A13A00AB48AE /* Player.xcassets in Resources */,

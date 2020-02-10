@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) UIActivityIndicatorView *loadingView;
 
+@property (nonatomic, strong) NSString* page;
+
 @end

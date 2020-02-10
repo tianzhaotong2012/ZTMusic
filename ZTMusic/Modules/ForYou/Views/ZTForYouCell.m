@@ -76,6 +76,17 @@
         .view;
         self.titleLabel.dk_textColorPicker = DKColorPickerWithKey(BLACK);
         
+        self.userLabel = self.contentView.addLabel(3)
+        .font([UIFont boldSystemFontOfSize:15]).textColor([UIColor grayColor])
+        .masonry(^ (MASConstraintMaker *make) {
+            make.left.mas_equalTo(self.imageView.mas_left).mas_offset(5);
+            make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(15);
+            make.right.mas_lessThanOrEqualTo(self.contentView);
+        })
+        .view;
+        
+        self.titleLabel.dk_textColorPicker = DKColorPickerWithKey(BLACK);
+        
     }
     return self;
 }
