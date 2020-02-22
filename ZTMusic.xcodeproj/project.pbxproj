@@ -32,6 +32,7 @@
 		9489725823CD6866002DE07B /* ZTArtistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489725623CD6865002DE07B /* ZTArtistViewController.m */; };
 		9489725E23CD9AE4002DE07B /* ZTArtistDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489725D23CD9AE4002DE07B /* ZTArtistDetailModel.m */; };
 		9489726123CDC5D7002DE07B /* ZTArtistDetailTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489726023CDC5D6002DE07B /* ZTArtistDetailTopView.m */; };
+		948E5475240103EE0034EEBD /* ZTVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948E5474240103EE0034EEBD /* ZTVoiceViewController.m */; };
 		94C49F6E23F17DC00084CC32 /* ZTForYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C49F6D23F17DC00084CC32 /* ZTForYouViewController.m */; };
 		94C49F7123F17E560084CC32 /* ZTForYouCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C49F7023F17E560084CC32 /* ZTForYouCell.m */; };
 		94C49F7423F17E9D0084CC32 /* ZTForYouModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C49F7323F17E9D0084CC32 /* ZTForYouModel.m */; };
@@ -196,6 +197,8 @@
 		9489725D23CD9AE4002DE07B /* ZTArtistDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTArtistDetailModel.m; sourceTree = "<group>"; };
 		9489725F23CDC5D6002DE07B /* ZTArtistDetailTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTArtistDetailTopView.h; sourceTree = "<group>"; };
 		9489726023CDC5D6002DE07B /* ZTArtistDetailTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTArtistDetailTopView.m; sourceTree = "<group>"; };
+		948E5473240103EE0034EEBD /* ZTVoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTVoiceViewController.h; sourceTree = "<group>"; };
+		948E5474240103EE0034EEBD /* ZTVoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTVoiceViewController.m; sourceTree = "<group>"; };
 		94C49F6C23F17DC00084CC32 /* ZTForYouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTForYouViewController.h; sourceTree = "<group>"; };
 		94C49F6D23F17DC00084CC32 /* ZTForYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTForYouViewController.m; sourceTree = "<group>"; };
 		94C49F6F23F17E560084CC32 /* ZTForYouCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTForYouCell.h; sourceTree = "<group>"; };
@@ -585,6 +588,47 @@
 			path = ZTArtistViewController;
 			sourceTree = "<group>";
 		};
+		948E546E2401035A0034EEBD /* Voice */ = {
+			isa = PBXGroup;
+			children = (
+				948E54722401038A0034EEBD /* ZTVoiceViewController */,
+				948E54712401037B0034EEBD /* Resources */,
+				948E54702401036E0034EEBD /* Models */,
+				948E546F240103640034EEBD /* Views */,
+			);
+			path = Voice;
+			sourceTree = "<group>";
+		};
+		948E546F240103640034EEBD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		948E54702401036E0034EEBD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		948E54712401037B0034EEBD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		948E54722401038A0034EEBD /* ZTVoiceViewController */ = {
+			isa = PBXGroup;
+			children = (
+				948E5473240103EE0034EEBD /* ZTVoiceViewController.h */,
+				948E5474240103EE0034EEBD /* ZTVoiceViewController.m */,
+			);
+			path = ZTVoiceViewController;
+			sourceTree = "<group>";
+		};
 		94C49F6723F17C7A0084CC32 /* ForYou */ = {
 			isa = PBXGroup;
 			children = (
@@ -699,6 +743,7 @@
 		C23110C4210F216600C9C076 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				948E546E2401035A0034EEBD /* Voice */,
 				94C49F6723F17C7A0084CC32 /* ForYou */,
 				9489725223CD6567002DE07B /* Artist */,
 				9489723723CC19D8002DE07B /* Explore */,
@@ -1446,6 +1491,7 @@
 				C231116E210F262800C9C076 /* LCDatabase.mm in Sources */,
 				C2311142210F262100C9C076 /* ZZFLEXChainSectionModel.m in Sources */,
 				9489723023C86A55002DE07B /* LNPopupCloseButton.m in Sources */,
+				948E5475240103EE0034EEBD /* ZTVoiceViewController.m in Sources */,
 				C231116D210F262800C9C076 /* LCBaseRequest.m in Sources */,
 				C29EAC7D211048D800EF0AB3 /* UIColor+ZTKit.m in Sources */,
 				C2311165210F262100C9C076 /* LCRouter+Register.m in Sources */,
