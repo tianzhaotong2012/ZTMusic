@@ -37,6 +37,8 @@
 		94C49F7123F17E560084CC32 /* ZTForYouCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C49F7023F17E560084CC32 /* ZTForYouCell.m */; };
 		94C49F7423F17E9D0084CC32 /* ZTForYouModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C49F7323F17E9D0084CC32 /* ZTForYouModel.m */; };
 		94C49F7623F19AF30084CC32 /* Search.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94C49F7523F19AF30084CC32 /* Search.xcassets */; };
+		94F0202824011E3D00939AF3 /* ZTVoiceMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F0202624011E3D00939AF3 /* ZTVoiceMode.m */; };
+		94F0202B240121FC00939AF3 /* ZTStyleBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F0202A240121FC00939AF3 /* ZTStyleBannerCell.m */; };
 		BC763B9CAF96840676069576 /* libPods-ZTMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF950782CF6EF3F174EFF0D /* libPods-ZTMusic.a */; };
 		C22D73DC21197B8E00AB48AE /* ZTSearchResultTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D73DB21197B8E00AB48AE /* ZTSearchResultTitleCell.m */; };
 		C22D73DF21197C8F00AB48AE /* ZTArtistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D73DE21197C8F00AB48AE /* ZTArtistModel.m */; };
@@ -206,6 +208,10 @@
 		94C49F7223F17E9D0084CC32 /* ZTForYouModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTForYouModel.h; sourceTree = "<group>"; };
 		94C49F7323F17E9D0084CC32 /* ZTForYouModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTForYouModel.m; sourceTree = "<group>"; };
 		94C49F7523F19AF30084CC32 /* Search.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Search.xcassets; sourceTree = "<group>"; };
+		94F0202624011E3D00939AF3 /* ZTVoiceMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTVoiceMode.m; sourceTree = "<group>"; };
+		94F0202724011E3D00939AF3 /* ZTVoiceMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTVoiceMode.h; sourceTree = "<group>"; };
+		94F02029240121FC00939AF3 /* ZTStyleBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTStyleBannerCell.h; sourceTree = "<group>"; };
+		94F0202A240121FC00939AF3 /* ZTStyleBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTStyleBannerCell.m; sourceTree = "<group>"; };
 		C22D73DA21197B8E00AB48AE /* ZTSearchResultTitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTSearchResultTitleCell.h; sourceTree = "<group>"; };
 		C22D73DB21197B8E00AB48AE /* ZTSearchResultTitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTSearchResultTitleCell.m; sourceTree = "<group>"; };
 		C22D73DD21197C8F00AB48AE /* ZTArtistModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTArtistModel.h; sourceTree = "<group>"; };
@@ -602,6 +608,8 @@
 		948E546F240103640034EEBD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				94F02029240121FC00939AF3 /* ZTStyleBannerCell.h */,
+				94F0202A240121FC00939AF3 /* ZTStyleBannerCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -609,6 +617,8 @@
 		948E54702401036E0034EEBD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				94F0202724011E3D00939AF3 /* ZTVoiceMode.h */,
+				94F0202624011E3D00939AF3 /* ZTVoiceMode.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1505,6 +1515,7 @@
 				C29EAC9E21104C9A00EF0AB3 /* TLSettingItemBaseCell.m in Sources */,
 				C22D73EB2119940800AB48AE /* ZTLibraryCateCell.m in Sources */,
 				C29EAC9C21104C9A00EF0AB3 /* TLSettingItemSwitchCell.m in Sources */,
+				94F0202B240121FC00939AF3 /* ZTStyleBannerCell.m in Sources */,
 				C29EAC4521100BFF00EF0AB3 /* UIView+TLEmpty.m in Sources */,
 				C231113C210F262100C9C076 /* ZZFlexibleLayoutSectionModel.m in Sources */,
 				9489722E23C86A55002DE07B /* LNPopupLongPressGesutreRecognizer.m in Sources */,
@@ -1603,6 +1614,7 @@
 				C231114D210F262100C9C076 /* ZZTableViewChainModel.m in Sources */,
 				9489723223C86A55002DE07B /* LNPopupOpenTapGesutreRecognizer.m in Sources */,
 				C2311152210F262100C9C076 /* ZZControlChainModel.m in Sources */,
+				94F0202824011E3D00939AF3 /* ZTVoiceMode.m in Sources */,
 				9489722723C86A55002DE07B /* LNForwardingDelegate.m in Sources */,
 				C231117B210F275600C9C076 /* WebViewJavascriptBridge.m in Sources */,
 				C22D73DF21197C8F00AB48AE /* ZTArtistModel.m in Sources */,
@@ -1765,7 +1777,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.musicleft.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1791,7 +1803,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.musicleft.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

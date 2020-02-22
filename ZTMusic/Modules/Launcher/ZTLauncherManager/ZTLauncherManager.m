@@ -102,7 +102,7 @@
     };
     
     NSMutableArray *vcArray = [[NSMutableArray alloc] init];
-    [vcArray addObject:createItemVC([ZTLibraryViewController class], @"资料库", @"tabbar_library", @"tabbar_library")];
+    //[vcArray addObject:createItemVC([ZTLibraryViewController class], @"资料库", @"tabbar_library", @"tabbar_library")];
     [vcArray addObject:createItemVC([ZTExploreViewController class], @"发现", @"tabbar_explore", @"tabbar_explore")];
     [vcArray addObject:createItemVC([ZTForYouViewController class], @"推荐", @"tabbar_favorite", @"tabbar_favorite")];
     [vcArray addObject:createItemVC([ZTVoiceViewController class], @"声音", @"tabbar_voice", @"tabbar_voice")];

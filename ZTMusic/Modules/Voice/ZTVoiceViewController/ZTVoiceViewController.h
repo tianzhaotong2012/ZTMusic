@@ -10,4 +10,6 @@
 
 @interface ZTVoiceViewController : ZZFlexibleLayoutViewController
 
+@property (nonatomic, strong) UIActivityIndicatorView *loadingView;
+
 @end

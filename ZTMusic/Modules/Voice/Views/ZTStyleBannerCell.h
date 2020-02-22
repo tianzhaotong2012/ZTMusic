@@ -1,0 +1,17 @@
+//
+//  ZTStyleACell.h
+//  zhuanzhuan
+//
+//  Created by ZZUIHelper on 2020/1/13.
+//  Copyright © 2017年 ZZUIHelper. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "ZTSongModel.h"
+
+@interface ZTStyleBannerCell : UICollectionViewCell <ZZFlexibleLayoutViewProtocol>
+@property (nonatomic, copy) id (^eventAction)(NSInteger eventType, id data);
+@property (nonatomic, strong) ZZFLEXAngel *angel;
+@property (nonatomic, strong) NSArray *songArray;
+
+@end

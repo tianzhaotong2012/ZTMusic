@@ -85,22 +85,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "441A30F4-AC56-4CDF-8ADB-ED108E7C7262"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/KTVHTTPCache/KTVHTTPCache/Classes/KTVHCHTTPServer/KTVHCHTTPServer.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "-init"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "CA5CA870-76CE-4131-A583-A8746A909E12"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -128,22 +112,6 @@
             endingLineNumber = "125"
             landmarkName = "ZTPlayer"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "61E0A417-1531-4EAD-9744-C9282271D2DD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZTMusic/Modules/Player/ZTMusicPlayViewController/ZTMusicPlayViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -213,64 +181,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DD81561A-AF3E-47E6-8D79-0A166EE5008B"
+            uuid = "31174D97-4D9B-45CE-957F-060EE4085B6D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ZTMusic/Modules/Player/ZTMusicPlayViewController/ZTMusicPlayViewController.m"
+            filePath = "ZTMusic/Modules/Voice/ZTVoiceViewController/ZTVoiceViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "-requestVoiceModuleWithCompleteAction:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "DD81561A-AF3E-47E6-8D79-0A166EE5008B - 4fef2500fa6c59a4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ZTMusicPlayViewController viewDidLoad]"
-                  moduleName = "ZTMusic"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tian/Documents/ZTMusic/ZTMusic/Modules/Player/ZTMusicPlayViewController/ZTMusicPlayViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "312">
-               </Location>
-               <Location
-                  uuid = "DD81561A-AF3E-47E6-8D79-0A166EE5008B - 4d670795de386b42"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__40-[ZTMusicPlayViewController viewDidLoad]_block_invoke.23"
-                  moduleName = "ZTMusic"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tian/Documents/ZTMusic/ZTMusic/Modules/Player/ZTMusicPlayViewController/ZTMusicPlayViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "764">
-               </Location>
-               <Location
-                  uuid = "DD81561A-AF3E-47E6-8D79-0A166EE5008B - 4d6707b5ae386947"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__40-[ZTMusicPlayViewController viewDidLoad]_block_invoke.44"
-                  moduleName = "ZTMusic"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tian/Documents/ZTMusic/ZTMusic/Modules/Player/ZTMusicPlayViewController/ZTMusicPlayViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "41FC0138-A1AC-4854-AD6C-A4C7A46266EB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZTMusic/Modules/Voice/ZTVoiceViewController/ZTVoiceViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "-loadVoiceModuleWithModelArray:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FDC5BCAD-8769-4702-BF35-2CF0306F368B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZTMusic/Modules/Voice/Views/ZTStyleBannerCell.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "+viewHeightByDataModel:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
