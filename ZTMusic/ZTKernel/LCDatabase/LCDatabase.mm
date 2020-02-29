@@ -53,6 +53,7 @@
     };
     
 //    _accountTable = createTable(@"Account", LCUser.class);
+    //_songTable = createTable(@"Song",ZTSongModel.class);
 }
 
 - (void)clear

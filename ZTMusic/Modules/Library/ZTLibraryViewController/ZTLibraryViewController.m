@@ -49,7 +49,7 @@ typedef NS_ENUM(NSInteger, ZTLibraryVCSectionType) {
     {
         NSInteger sectionTag = ZTLibraryVCSectionTypeRecent;
         self.addSection(sectionTag);
-        self.addCell(@"ZTSearchSectionTitleCell").toSection(sectionTag).withDataModel(@{@"title" : @"最近添加"});
+        self.addCell(@"ZTSearchSectionTitleCell").toSection(sectionTag).withDataModel(@{@"title" : LOCSTR(@"最近添加")});
     }
     
     [self reloadView];

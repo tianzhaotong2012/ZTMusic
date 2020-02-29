@@ -14,6 +14,9 @@
 /// 账户
 //@property (nonatomic, strong, readonly) WCTTable *accountTable;
 
+//歌曲
+@property (nonatomic, strong, readonly) WCTTable *songTable;
+
 + (LCDatabase *)sharedInstance;
 
 - (void)clear;

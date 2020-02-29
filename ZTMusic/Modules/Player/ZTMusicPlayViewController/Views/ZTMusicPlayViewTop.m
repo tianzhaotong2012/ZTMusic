@@ -20,13 +20,22 @@
 
 @property (nonatomic, assign) BOOL withLine;
 
+@property (nonatomic, strong) UIButton *playButton;
+
+@property (nonatomic, strong) UIButton *prevButton;
+
+@property (nonatomic, strong) UIButton *nextButton;
+
+//音量条(托控件)
+@property (nonatomic, nonatomic) UISlider *volume;
+
 @end
 
 @implementation ZTMusicPlayViewTop
 
 + (CGFloat)viewHeightByDataModel:(id)dataModel
 {
-    return SCREEN_WIDTH;
+    return SCREEN_HEIGHT;
 }
 
 - (void)setViewDataModel:(ZTSongModel *)dataModel
@@ -34,6 +43,12 @@
     [self.imageView sd_setImageWithURL:dataModel.poster.toURL placeholderImage:[UIImage imageNamed:@"poster"]];
     [self.titleLabel setText:![LOCSTR(dataModel.title) isEqual:@""]?LOCSTR(dataModel.title):LOCSTR(@"未在播放")];
     [self.userLabel setText:![LOCSTR(dataModel.artist.artistName) isEqual:@""]?LOCSTR(dataModel.artist.artistName):LOCSTR(@"歌手")];
+
+    self.playButton.zz_make.backgroundImage([UIImage imageNamed:@"play"]);
+    self.prevButton.zz_make.backgroundImage([UIImage imageNamed:@"nowPlaying_prev"]);
+    self.nextButton.zz_make.backgroundImage([UIImage imageNamed:@"nowPlaying_next"]);
+    
+    self.volume = [[UISlider alloc] initWithFrame:CGRectMake(100, 200, 100, 20)];
     
     [self setNeedsDisplay];
 }
@@ -68,7 +83,7 @@
         .masonry(^ (MASConstraintMaker *make) {
             make.left.mas_equalTo(50);
             make.top.mas_equalTo(40);
-            make.bottom.mas_equalTo(-90);
+            make.height.mas_equalTo(SCREEN_WIDTH*0.7);
             make.right.mas_equalTo(-50);
         })
         .view;
@@ -105,6 +120,46 @@
             make.bottom.mas_equalTo(-3);
         })
         .view;
+        
+        self.playButton = self.contentView.addButton(2)
+        .titleColor([UIColor colorPink]).titleFont([UIFont systemFontOfSize:16])
+        .eventBlock(UIControlEventTouchUpInside, ^(UIButton *sender) {
+            if (self.eventAction) {
+                self.eventAction(0, nil);
+            }
+        })
+        .masonry(^ (MASConstraintMaker *make) {
+            make.left.mas_equalTo(SCREEN_WIDTH/2-10);
+            make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(205);
+        })
+        .view;
+        
+        self.prevButton = self.contentView.addButton(3)
+        .titleColor([UIColor colorPink]).titleFont([UIFont systemFontOfSize:16])
+        .eventBlock(UIControlEventTouchUpInside, ^(UIButton *sender) {
+            if (self.eventAction) {
+                self.eventAction(0, nil);
+            }
+        })
+        .masonry(^ (MASConstraintMaker *make) {
+            make.right.mas_equalTo(self.playButton.mas_left).mas_offset(-60);
+            make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(200);
+        })
+        .view;
+        
+        self.nextButton = self.contentView.addButton(4)
+        .titleColor([UIColor colorPink]).titleFont([UIFont systemFontOfSize:16])
+        .eventBlock(UIControlEventTouchUpInside, ^(UIButton *sender) {
+            if (self.eventAction) {
+                self.eventAction(0, nil);
+            }
+        })
+        .masonry(^ (MASConstraintMaker *make) {
+            make.left.mas_equalTo(self.playButton.mas_right).mas_offset(60);
+            make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(200);
+        })
+        .view;
+        
         
     }
     return self;
