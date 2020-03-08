@@ -161,6 +161,13 @@ self.addCells(@"ZTForYouCell").toSection(0).withDataModelArray(forYouModel.songs
         
         //-----------------播放跳转-------------------------------------------
         [[ZTMusicPlayViewController sharedInstance] startPlayMusic:model];
+        TSong *tSong = [[TSong alloc] init];
+        tSong.postId = model.postId;
+        tSong.poster = model.poster;
+        tSong.title = model.title;
+        tSong.mp3 = model.preview.mp3;
+        tSong.artistName = model.artist.artistName;
+        [[LCDatabase sharedInstance] insertData:tSong];
         //初始化一个UIAlertController的警告框
 //        UIAlertController *alertController;
 //        if(IS_IPHONE){
