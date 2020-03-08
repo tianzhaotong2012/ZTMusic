@@ -56,12 +56,18 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        self.imageView = self.contentView.addImageView(1).cornerRadius(5).borderWidth(BORDER_WIDTH_1PX).borderColor([UIColor colorGrayForSeperator].CGColor)
-        .contentMode(UIViewContentModeScaleAspectFill).clipsToBounds(YES)
-        .masonry(^ (MASConstraintMaker *make) {
+        self.imageView = self.contentView.addImageView(1).shadow(CGSizeMake(-2, 10),6,[UIColor grayColor],0.4).cornerRadius(5).masksToBounds(NO).masonry(^ (MASConstraintMaker *make) {
             make.left.mas_equalTo(12.5);
             make.top.mas_equalTo(15);
             make.bottom.mas_equalTo(-SCREEN_WIDTH/2 * 0.35);
+            make.width.mas_equalTo(SCREEN_WIDTH/2 - 25);
+        })
+        .view.addImageView(1).borderWidth(BORDER_WIDTH_1PX).borderColor([UIColor colorGrayForSeperator].CGColor).shadow(CGSizeMake(0, 10),2,[UIColor grayColor],0.3).cornerRadius(5)
+        .contentMode(UIViewContentModeScaleAspectFill).masksToBounds(YES)
+        .masonry(^ (MASConstraintMaker *make) {
+            make.left.mas_equalTo(0);
+            make.top.mas_equalTo(0);
+            make.bottom.mas_equalTo(0);
             make.width.mas_equalTo(SCREEN_WIDTH/2 - 25);
         })
         .view;
