@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TSong.h"
 
 @class WCTTable;
 @interface LCDatabase : NSObject
@@ -20,5 +21,7 @@
 + (LCDatabase *)sharedInstance;
 
 - (void)clear;
+- (BOOL)insertData:(TSong *)tSong;
+- (NSArray<TSong *> *)selectOrder;
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZTSongModel.h"
 
 @interface ZTLibraryViewController : ZZFlexibleLayoutViewController
+
+@property (nonatomic, strong) NSArray<ZTSongModel *> *recentSongs;
 
 @end

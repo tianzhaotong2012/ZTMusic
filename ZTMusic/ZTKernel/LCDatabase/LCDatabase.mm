@@ -8,6 +8,7 @@
 
 #import "LCDatabase.h"
 #import <WCDB/WCDB.h>
+#import "TSong+WCTTableCoding.h"
 
 @interface LCDatabase ()
 
@@ -53,7 +54,32 @@
     };
     
 //    _accountTable = createTable(@"Account", LCUser.class);
-    //_songTable = createTable(@"Song",ZTSongModel.class);
+    _songTable = createTable(@"tSong",TSong.class);
+}
+
+- (BOOL)insertData:(TSong *)tSong {
+    tSong.isAutoIncrement = YES;
+    BOOL result = [self.db insertObject:tSong into:@"tSong"];
+    
+    //关闭数据库,_database如果能自己释放的话,会自动关闭,就不用手动调用关闭了
+    [self.db close];
+
+    if (!result) {
+        NSLog(@"插入失败");
+        return NO;
+    }else{
+        NSLog(@"插入成功");
+        return YES;
+    }
+}
+
+// 查询数据  用localID排序
+- (NSArray<TSong *> *)selectOrder {
+    NSArray<TSong *> *objects2 = [self.db getObjectsOfClass:TSong.class fromTable:@"tSong" orderBy:TSong.localID.operator*(-1).order()];
+    [objects2 enumerateObjectsUsingBlock:^(TSong *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"数据库查询用localID排序 --> %@ \n",obj.title);
+    }];
+    return objects2;
 }
 
 - (void)clear

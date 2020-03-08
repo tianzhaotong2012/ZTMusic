@@ -12,6 +12,9 @@
 #import "ZTArtistViewController.h"
 #import "TLWebViewController.h"
 
+#import "LCDatabase.h"
+#import "TSong.h"
+
 @interface ZTSearchResultAngel ()
 
 @end
@@ -54,6 +57,13 @@
         if (model.type == 1) {
             self.addCells(@"ZTSearchResultSongCell").toSection(i).withDataModelArray(model.songs).selectedAction(^ (ZTSongModel *model) {
                 [[ZTMusicPlayViewController sharedInstance] startPlayMusic:model];
+                TSong *tSong = [[TSong alloc] init];
+                tSong.postId = model.postId;
+                tSong.poster = model.poster;
+                tSong.title = model.title;
+                tSong.mp3 = model.preview.mp3;
+                tSong.artistName = model.artist.artistName;
+                [[LCDatabase sharedInstance] insertData:tSong];
                 //-----------------播放跳转-------------------------------------------
                 //初始化一个UIAlertController的警告框
 //                UIAlertController *alertController;

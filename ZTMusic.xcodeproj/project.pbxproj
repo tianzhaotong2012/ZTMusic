@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		940C5A7123E061E700D9E7C2 /* ZTMusicPlayViewTop.m in Sources */ = {isa = PBXBuildFile; fileRef = 940C5A7023E061E700D9E7C2 /* ZTMusicPlayViewTop.m */; };
+		947AD2D3241498180072605F /* TSong.mm in Sources */ = {isa = PBXBuildFile; fileRef = 947AD2D2241498180072605F /* TSong.mm */; };
 		9489722623C86A55002DE07B /* LNPopupControllerAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 948971FD23C86A54002DE07B /* LNPopupControllerAssets.xcassets */; };
 		9489722723C86A55002DE07B /* LNForwardingDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489720723C86A55002DE07B /* LNForwardingDelegate.m */; };
 		9489722823C86A55002DE07B /* LNPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9489720823C86A55002DE07B /* LNPopupController.m */; };
@@ -146,6 +147,9 @@
 		64C40966AD34FD3CB1D5DFAE /* Pods-ZTMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZTMusic/Pods-ZTMusic.release.xcconfig"; sourceTree = "<group>"; };
 		940C5A6F23E061E700D9E7C2 /* ZTMusicPlayViewTop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTMusicPlayViewTop.h; sourceTree = "<group>"; };
 		940C5A7023E061E700D9E7C2 /* ZTMusicPlayViewTop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTMusicPlayViewTop.m; sourceTree = "<group>"; };
+		947AD2D1241497FB0072605F /* TSong.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSong.h; sourceTree = "<group>"; };
+		947AD2D2241498180072605F /* TSong.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TSong.mm; sourceTree = "<group>"; };
+		947AD2D4241498590072605F /* TSong+WCTTableCoding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TSong+WCTTableCoding.h"; sourceTree = "<group>"; };
 		948971FD23C86A54002DE07B /* LNPopupControllerAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LNPopupControllerAssets.xcassets; sourceTree = "<group>"; };
 		948971FE23C86A54002DE07B /* LNPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPopupController.h; sourceTree = "<group>"; };
 		9489720023C86A54002DE07B /* LNPopupCloseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPopupCloseButton.h; sourceTree = "<group>"; };
@@ -1053,6 +1057,9 @@
 			children = (
 				C231116C210F262700C9C076 /* LCDatabase.h */,
 				C231116B210F262700C9C076 /* LCDatabase.mm */,
+				947AD2D1241497FB0072605F /* TSong.h */,
+				947AD2D2241498180072605F /* TSong.mm */,
+				947AD2D4241498590072605F /* TSong+WCTTableCoding.h */,
 			);
 			path = LCDatabase;
 			sourceTree = "<group>";
@@ -1543,6 +1550,7 @@
 				C231115F210F262100C9C076 /* ZZFLEXRequestQueue.m in Sources */,
 				C2311161210F262100C9C076 /* ZZFlexibleLayoutViewController+EditExtension.m in Sources */,
 				C231114C210F262100C9C076 /* ZZCollectionViewChainModel.m in Sources */,
+				947AD2D3241498180072605F /* TSong.mm in Sources */,
 				C29EAC9F21104C9A00EF0AB3 /* TLSettingItemNormalCell.m in Sources */,
 				C256F4F3211AC92600BEFC26 /* ZTLibraryCateModel.m in Sources */,
 				C29EAC772110487A00EF0AB3 /* UINavigationBar+Night.m in Sources */,
