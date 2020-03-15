@@ -16,6 +16,9 @@
 #import "ZTAppConfig.h"
 #import <DKNightVersion/DKNightVersion.h>
 
+#import "LCDatabase.h"
+#import "TSong.h"
+
 @interface ZTMusicPlayViewController ()
 
 @property (nonatomic, strong) ZTSongModel *songModel;
@@ -61,12 +64,13 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
         self.popupItem.title = songModel.title;
         self.popupItem.progress = currentTime/totalTime;
         if(self.popupItem.leftBarButtonItems.firstObject == self.loadingItem){
-                 self.popupItem.leftBarButtonItems = @[ self.pauseItem ];
+                 self.popupItem.leftBarButtonItems = @[ self.pauseItem , self.nextItem];
         }
     } stopPlayAction:^(ZTSongModel *songModel, ZTPlayerStopType type) {
         NSLog(@"[ZTPlayerManager] 停止播放：%ld", type);
-        self.popupItem.leftBarButtonItems = @[ self.playItem ];
+        self.popupItem.leftBarButtonItems = @[ self.playItem , self.nextItem];
         self.popupItem.title = songModel.title;
+        [self nextButtonClick];
     }];
     
     [self loadPlayerVCSubviews];
@@ -90,7 +94,7 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
 {
     self.songModel = musicModel;
     //self.popupItem.leftBarButtonItems = @[self.pauseItem];
-    self.popupItem.leftBarButtonItems = @[ self.loadingItem ];
+    self.popupItem.leftBarButtonItems = @[ self.loadingItem , self.nextItem];
     
     self.popupItem.title = musicModel.title;
     //self.popupItem.subtitle = musicModel.artist.artistName;
@@ -115,7 +119,7 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
 - (void)playButtonClick
 {
     //[self.popupItem setLeftBarButtonItems:@[self.pauseItem]];
-    self.popupItem.leftBarButtonItems = @[ self.pauseItem ]; 
+    self.popupItem.leftBarButtonItems = @[ self.pauseItem , self.nextItem];
     [[ZTPlayerManager sharedInstance].player play];
     
     [self refreshUI];
@@ -124,7 +128,7 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
 - (void)pauseButtonClick
 {
     //[self.popupItem setLeftBarButtonItems:@[self.playItem]];
-    self.popupItem.leftBarButtonItems = @[ self.playItem ];
+    self.popupItem.leftBarButtonItems = @[ self.playItem , self.nextItem];
     
     [[ZTPlayerManager sharedInstance].player pause];
     
@@ -133,14 +137,45 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
 
 - (void)nextButtonClick
 {
+    [[ZTPlayerManager sharedInstance].player pause];
+    self.popupItem.image = [UIImage imageNamed:@"AppIcon60x60@3x"];
     
+    TSong *tSong = [[LCDatabase sharedInstance] nextSong:self.songModel.postId];
+    if(tSong == nil){
+        [[ZTPlayerManager sharedInstance].player pause];
+        self.popupItem.leftBarButtonItems = @[ self.playItem , self.nextItem];
+        return;
+    }
+    ZTSongModel* songModel = [[ZTSongModel alloc] init];
+    songModel.postId = tSong.postId;
+    songModel.title = tSong.title;
+    songModel.poster = tSong.poster;
+    ZTArtistModel* artist = [[ZTArtistModel alloc] init];
+    artist.artistName = tSong.artistName;
+    songModel.artist = artist;
+    ZTSongPreviewModel* preview = [[ZTSongPreviewModel alloc] init];
+    preview.mp3 = tSong.mp3;
+    songModel.preview = preview;
+    self.songModel = songModel;
+    
+    [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:songModel.poster.toURL options:SDWebImageDownloaderHighPriority progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, BOOL finished) {
+        songModel.posterImage = image;
+        if (finished && image && self.songModel == songModel) {
+            self.popupItem.image = image;
+        }
+    }];
+    
+    self.popupItem.leftBarButtonItems = @[ self.pauseItem , self.nextItem];
+    [[ZTPlayerManager sharedInstance] playMusic:songModel];
+    
+    [self refreshUI];
 }
 
 #pragma mark - # UI
 - (void)loadPlayerVCSubviews
 {
     UIBarButtonItem *(^createBarButton)(NSString *imageName, SEL selector) = ^UIBarButtonItem *(NSString *imageName, SEL selector) {
-        UIButton *button = UIButton.zz_create(0).image([UIImage imageNamed:imageName]).frame(CGRectMake(0, 0, 96, 55))
+        UIButton *button = UIButton.zz_create(0).image([UIImage imageNamed:imageName]).frame(CGRectMake(0, 0, 60, 55))
         .eventBlock(UIControlEventTouchUpInside, ^(UIButton *sender) {
 
             [self performSelectorOnMainThread:selector withObject:nil waitUntilDone:NO];
@@ -153,7 +188,7 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
     self.pauseItem = createBarButton(@"pause", @selector(pauseButtonClick));
     self.nextItem = createBarButton(@"nextFwd", @selector(nextButtonClick));
 
-    UIActivityIndicatorView* loadingView = [[UIActivityIndicatorView alloc] initWithFrame:(CGRectMake(0, 0, 96, 55))];
+    UIActivityIndicatorView* loadingView = [[UIActivityIndicatorView alloc] initWithFrame:(CGRectMake(0, 0, 60, 55))];
     loadingView.color = [UIColor colorPink];
     [loadingView startAnimating];
     self.loadingItem = [[UIBarButtonItem alloc] initWithCustomView:loadingView];
@@ -185,8 +220,7 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
         }
         else
         {
-            self.popupItem.leftBarButtonItems = @[ self.playItem ];
-            self.popupItem.rightBarButtonItems = nil;
+            self.popupItem.leftBarButtonItems = @[ self.playItem, self.nextItem ];
         }
     
     self.popupItem.title = LOCSTR(@"未在播放");

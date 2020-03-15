@@ -82,6 +82,12 @@
     return objects2;
 }
 
+// 查询next
+- (TSong *)nextSong:(NSString *) postId{
+    NSArray<TSong *> *objects2 = [self.db getObjectsOfClass:TSong.class fromTable:@"tSong" where:TSong.postId > postId orderBy:TSong.localID.operator*(-1).order()];
+    return objects2.firstObject;
+}
+
 - (void)clear
 {
     for (WCTTable *table in self.tableArray) {

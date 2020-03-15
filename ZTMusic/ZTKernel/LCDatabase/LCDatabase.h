@@ -23,5 +23,7 @@
 - (void)clear;
 - (BOOL)insertData:(TSong *)tSong;
 - (NSArray<TSong *> *)selectOrder;
+// 查询next
+- (TSong *)nextSong:(NSString *) postId;
 
 @end
