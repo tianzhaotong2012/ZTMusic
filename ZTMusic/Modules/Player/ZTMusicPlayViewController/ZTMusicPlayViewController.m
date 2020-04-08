@@ -85,7 +85,24 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
     NSInteger sectionTag = ZTMusicPlayViewTop;
     self.sectionForTag(sectionTag).clear();
      self.addSection(0);
-     self.addCell(@"ZTMusicPlayViewTop").toSection(0).withDataModel(_songModel);
+    self.addCell(@"ZTMusicPlayViewTop").toSection(0).withDataModel(_songModel).eventAction(^ id(NSInteger eventType, ZTSongModel *model) {
+        if(eventType == 1){
+            if([[ZTPlayerManager sharedInstance].player isPlaying] == YES){
+                [self pauseButtonClick];
+            }else{
+                [self playButtonClick];
+            }
+            
+        }
+        if(eventType == 2){
+            [self prevButtonClick];
+        }
+        if(eventType == 3){
+            [self nextButtonClick];
+        }
+        
+        return nil;
+    });
     
     [self.collectionView reloadData];
 }
@@ -170,6 +187,43 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
     
     [self refreshUI];
 }
+
+- (void)prevButtonClick
+{
+    [[ZTPlayerManager sharedInstance].player pause];
+    self.popupItem.image = [UIImage imageNamed:@"AppIcon60x60@3x"];
+    
+    TSong *tSong = [[LCDatabase sharedInstance] prevSong:self.songModel.postId];
+    if(tSong == nil){
+        [[ZTPlayerManager sharedInstance].player pause];
+        self.popupItem.leftBarButtonItems = @[ self.playItem , self.nextItem];
+        return;
+    }
+    ZTSongModel* songModel = [[ZTSongModel alloc] init];
+    songModel.postId = tSong.postId;
+    songModel.title = tSong.title;
+    songModel.poster = tSong.poster;
+    ZTArtistModel* artist = [[ZTArtistModel alloc] init];
+    artist.artistName = tSong.artistName;
+    songModel.artist = artist;
+    ZTSongPreviewModel* preview = [[ZTSongPreviewModel alloc] init];
+    preview.mp3 = tSong.mp3;
+    songModel.preview = preview;
+    self.songModel = songModel;
+    
+    [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:songModel.poster.toURL options:SDWebImageDownloaderHighPriority progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, BOOL finished) {
+        songModel.posterImage = image;
+        if (finished && image && self.songModel == songModel) {
+            self.popupItem.image = image;
+        }
+    }];
+    
+    self.popupItem.leftBarButtonItems = @[ self.pauseItem , self.nextItem];
+    [[ZTPlayerManager sharedInstance] playMusic:songModel];
+    
+    [self refreshUI];
+}
+
 
 #pragma mark - # UI
 - (void)loadPlayerVCSubviews

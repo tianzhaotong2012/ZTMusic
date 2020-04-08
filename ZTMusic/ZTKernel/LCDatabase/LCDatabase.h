@@ -26,4 +26,7 @@
 // 查询next
 - (TSong *)nextSong:(NSString *) postId;
 
+// 查询prev
+- (TSong *)prevSong:(NSString *) postId;
+
 @end

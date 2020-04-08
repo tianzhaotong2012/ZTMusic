@@ -7,6 +7,7 @@
 //
 
 #import "ZTMusicPlayViewTop.h"
+#import "ZTPlayerManager.h"
 
 @interface ZTMusicPlayViewTop ()
 
@@ -44,9 +45,13 @@
     [self.titleLabel setText:![LOCSTR(dataModel.title) isEqual:@""]?LOCSTR(dataModel.title):LOCSTR(@"未在播放")];
     [self.userLabel setText:![LOCSTR(dataModel.artist.artistName) isEqual:@""]?LOCSTR(dataModel.artist.artistName):LOCSTR(@"歌手")];
 
-//    self.playButton.zz_make.backgroundImage([UIImage imageNamed:@"play"]);
-//    self.prevButton.zz_make.backgroundImage([UIImage imageNamed:@"nowPlaying_prev"]);
-//    self.nextButton.zz_make.backgroundImage([UIImage imageNamed:@"nowPlaying_next"]);
+    if([[ZTPlayerManager sharedInstance].player isPlaying] == YES){
+     self.playButton.zz_make.image([UIImage imageNamed:@"nowPlaying_pause"]);
+    }else{
+      self.playButton.zz_make.image([UIImage imageNamed:@"nowPlaying_play"]);
+    }
+    self.prevButton.zz_make.backgroundImage([UIImage imageNamed:@"nowPlaying_prev"]);
+    self.nextButton.zz_make.backgroundImage([UIImage imageNamed:@"nowPlaying_next"]);
     
     self.volume = [[UISlider alloc] initWithFrame:CGRectMake(100, 200, 100, 20)];
     
@@ -78,13 +83,29 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        self.imageView = self.contentView.addImageView(1).cornerRadius(10).borderWidth(BORDER_WIDTH_1PX).borderColor([UIColor colorGrayForSeperator].CGColor)
-        .contentMode(UIViewContentModeScaleAspectFill).clipsToBounds(YES)
-        .masonry(^ (MASConstraintMaker *make) {
-            make.left.mas_equalTo(50);
+//        self.imageView = self.contentView.addImageView(1).cornerRadius(10).borderWidth(BORDER_WIDTH_1PX).borderColor([UIColor colorGrayForSeperator].CGColor)
+//        .contentMode(UIViewContentModeScaleAspectFill).clipsToBounds(YES)
+//        .masonry(^ (MASConstraintMaker *make) {
+//            make.left.mas_equalTo(50);
+//            make.top.mas_equalTo(40);
+//            make.height.mas_equalTo(SCREEN_WIDTH*0.7);
+//            make.right.mas_equalTo(-50);
+//        })
+//        .view;
+        
+        self.imageView = self.contentView.addImageView(1).shadow(CGSizeMake(-2, 10),6,[UIColor grayColor],0.4).cornerRadius(5).masksToBounds(NO).masonry(^ (MASConstraintMaker *make) {
+           make.left.mas_equalTo(50);
             make.top.mas_equalTo(40);
             make.height.mas_equalTo(SCREEN_WIDTH*0.7);
             make.right.mas_equalTo(-50);
+        })
+        .view.addImageView(1).borderWidth(BORDER_WIDTH_1PX).borderColor([UIColor colorGrayForSeperator].CGColor).shadow(CGSizeMake(0, 10),2,[UIColor grayColor],0.3).cornerRadius(5)
+        .contentMode(UIViewContentModeScaleAspectFill).masksToBounds(YES)
+        .masonry(^ (MASConstraintMaker *make) {
+            make.left.mas_equalTo(0);
+            make.top.mas_equalTo(0);
+            make.bottom.mas_equalTo(0);
+            make.right.mas_equalTo(0);
         })
         .view;
         
@@ -121,44 +142,43 @@
         })
         .view;
         
-//        self.playButton = self.contentView.addButton(2)
-//        .titleColor([UIColor colorPink]).titleFont([UIFont systemFontOfSize:16])
-//        .eventBlock(UIControlEventTouchUpInside, ^(UIButton *sender) {
-//            if (self.eventAction) {
-//                self.eventAction(0, nil);
-//            }
-//        })
-//        .masonry(^ (MASConstraintMaker *make) {
-//            make.left.mas_equalTo(SCREEN_WIDTH/2-10);
-//            make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(205);
-//        })
-//        .view;
-//
-//        self.prevButton = self.contentView.addButton(3)
-//        .titleColor([UIColor colorPink]).titleFont([UIFont systemFontOfSize:16])
-//        .eventBlock(UIControlEventTouchUpInside, ^(UIButton *sender) {
-//            if (self.eventAction) {
-//                self.eventAction(0, nil);
-//            }
-//        })
-//        .masonry(^ (MASConstraintMaker *make) {
-//            make.right.mas_equalTo(self.playButton.mas_left).mas_offset(-60);
-//            make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(200);
-//        })
-//        .view;
-//
-//        self.nextButton = self.contentView.addButton(4)
-//        .titleColor([UIColor colorPink]).titleFont([UIFont systemFontOfSize:16])
-//        .eventBlock(UIControlEventTouchUpInside, ^(UIButton *sender) {
-//            if (self.eventAction) {
-//                self.eventAction(0, nil);
-//            }
-//        })
-//        .masonry(^ (MASConstraintMaker *make) {
-//            make.left.mas_equalTo(self.playButton.mas_right).mas_offset(60);
-//            make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(200);
-//        })
-//        .view;
+        self.playButton = self.contentView.addButton(2)
+        .titleColor([UIColor colorPink]).titleFont([UIFont systemFontOfSize:16])
+        .eventBlock(UIControlEventTouchUpInside, ^(UIButton *sender) {
+            if (self.eventAction) {
+                self.eventAction(1, nil);
+            }
+        })
+        .masonry(^ (MASConstraintMaker *make) {
+            make.left.mas_equalTo(SCREEN_WIDTH/2-20);            make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(200);
+        })
+        .view;
+
+        self.prevButton = self.contentView.addButton(3)
+        .titleColor([UIColor colorPink]).titleFont([UIFont systemFontOfSize:16])
+        .eventBlock(UIControlEventTouchUpInside, ^(UIButton *sender) {
+            if (self.eventAction) {
+                self.eventAction(2, nil);
+            }
+        })
+        .masonry(^ (MASConstraintMaker *make) {
+            make.right.mas_equalTo(self.playButton.mas_left).mas_offset(-60);
+            make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(200);
+        })
+        .view;
+
+        self.nextButton = self.contentView.addButton(4)
+        .titleColor([UIColor colorPink]).titleFont([UIFont systemFontOfSize:16])
+        .eventBlock(UIControlEventTouchUpInside, ^(UIButton *sender) {
+            if (self.eventAction) {
+                self.eventAction(3, nil);
+            }
+        })
+        .masonry(^ (MASConstraintMaker *make) {
+            make.left.mas_equalTo(self.playButton.mas_right).mas_offset(60);
+            make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(200);
+        })
+        .view;
         
         
     }

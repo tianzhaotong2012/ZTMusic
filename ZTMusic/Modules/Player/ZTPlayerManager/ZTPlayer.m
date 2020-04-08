@@ -111,6 +111,7 @@
 
 - (void)pause
 {
+    _isPlaying = NO;
     [self.player pause];
 }
 
