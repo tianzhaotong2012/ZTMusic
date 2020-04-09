@@ -85,6 +85,7 @@
 // 查询next
 - (TSong *)nextSong:(NSString *) postId{
    TSong *objects1 = [self.db getOneObjectOfClass:TSong.class fromTable:@"tSong" where:TSong.postId == postId];
+    if(objects1 == nil){return nil;}
     NSArray<TSong *> *objects2 = [self.db getObjectsOfClass:TSong.class fromTable:@"tSong" where:TSong.localID > objects1.localID orderBy:TSong.localID.operator*(1).order()];
     return objects2.firstObject;
 }
@@ -92,6 +93,7 @@
 // 查询prev
 - (TSong *)prevSong:(NSString *) postId{
     TSong *objects1 = [self.db getOneObjectOfClass:TSong.class fromTable:@"tSong" where:TSong.postId == postId];
+    if(objects1 == nil){return nil;}
     NSArray<TSong *> *objects2 = [self.db getObjectsOfClass:TSong.class fromTable:@"tSong" where:TSong.localID < objects1.localID orderBy:TSong.localID.operator*(1).order()];
     return objects2.lastObject;
 }

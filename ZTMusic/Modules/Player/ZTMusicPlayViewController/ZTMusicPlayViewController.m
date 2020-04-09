@@ -161,6 +161,7 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
     if(tSong == nil){
         [[ZTPlayerManager sharedInstance].player pause];
         self.popupItem.leftBarButtonItems = @[ self.playItem , self.nextItem];
+        [self refreshUI];
         return;
     }
     ZTSongModel* songModel = [[ZTSongModel alloc] init];
@@ -197,6 +198,7 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
     if(tSong == nil){
         [[ZTPlayerManager sharedInstance].player pause];
         self.popupItem.leftBarButtonItems = @[ self.playItem , self.nextItem];
+        [self refreshUI];
         return;
     }
     ZTSongModel* songModel = [[ZTSongModel alloc] init];
