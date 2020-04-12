@@ -63,9 +63,11 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
         //self.popupItem.title = [songModel.title stringByAppendingFormat:@" %.2lf / %.2lf", currentTime, totalTime];
         self.popupItem.title = songModel.title;
         self.popupItem.progress = currentTime/totalTime;
+        [ZTPlayerManager sharedInstance].player.playingProcess = currentTime/totalTime;
         if(self.popupItem.leftBarButtonItems.firstObject == self.loadingItem){
                  self.popupItem.leftBarButtonItems = @[ self.pauseItem , self.nextItem];
         }
+        [self refreshUI];
     } stopPlayAction:^(ZTSongModel *songModel, ZTPlayerStopType type) {
         NSLog(@"[ZTPlayerManager] 停止播放：%ld", type);
         self.popupItem.leftBarButtonItems = @[ self.playItem , self.nextItem];

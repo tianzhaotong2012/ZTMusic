@@ -39,6 +39,16 @@ typedef NS_ENUM(NSInteger, ZTPlayerStopType) {
 @property (nonatomic, assign, readonly) BOOL isPlaying;
 
 /**
+ *  播放进度
+ */
+@property (nonatomic, assign) float playingProcess;
+
+/**
+ *  播放音量
+ */
+@property (nonatomic, assign) float volume;
+
+/**
  *  播放指定的url
  */
 - (void)playWithUrl:(NSString *)url;
@@ -52,5 +62,15 @@ typedef NS_ENUM(NSInteger, ZTPlayerStopType) {
  *  暂停
  */
 - (void)pause;
+
+/**
+ *   获取音量
+ */
+- (float)getVolume;
+
+/**
+ *   设置音量
+ */
+- (void)setVolume:(float)volume;
 
 @end

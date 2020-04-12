@@ -87,6 +87,16 @@
     [self.player play];
 }
 
+- (void) setVolume:(float)volume{
+    _volume = volume;
+    [self.player setVolume:_volume];
+}
+
+- (float) getVolume{
+    _volume = self.player.volume;
+    return _volume;
+}
+
 - (void)setUrl:(NSString *)url
 {
     //加入代理缓存

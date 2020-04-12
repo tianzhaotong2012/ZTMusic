@@ -27,6 +27,8 @@
 
 @property (nonatomic, strong) UIButton *nextButton;
 
+@property (nonatomic, strong) UIProgressView *processView;
+
 //音量条(托控件)
 @property (nonatomic, nonatomic) UISlider *volume;
 
@@ -54,6 +56,8 @@
     self.nextButton.zz_make.backgroundImage([UIImage imageNamed:@"nowPlaying_next"]);
     
     self.volume = [[UISlider alloc] initWithFrame:CGRectMake(100, 200, 100, 20)];
+    
+    [self.processView setProgress:[[ZTPlayerManager sharedInstance].player playingProcess]];
     
     [self setNeedsDisplay];
 }
@@ -150,7 +154,7 @@
             }
         })
         .masonry(^ (MASConstraintMaker *make) {
-            make.left.mas_equalTo(SCREEN_WIDTH/2-20);            make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(200);
+            make.left.mas_equalTo(SCREEN_WIDTH/2-20);            make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(170);
         })
         .view;
 
@@ -163,7 +167,7 @@
         })
         .masonry(^ (MASConstraintMaker *make) {
             make.right.mas_equalTo(self.playButton.mas_left).mas_offset(-60);
-            make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(200);
+            make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(170);
         })
         .view;
 
@@ -176,12 +180,39 @@
         })
         .masonry(^ (MASConstraintMaker *make) {
             make.left.mas_equalTo(self.playButton.mas_right).mas_offset(60);
-            make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(200);
+            make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(170);
         })
         .view;
         
+        self.processView = [[UIProgressView alloc] initWithFrame:CGRectMake(50, self.imageView.frame.origin.y + 450, SCREEN_WIDTH - 100, 20)];
+
+        [self.processView setProgressViewStyle:UIProgressViewStyleDefault]; //设置进度条类型
+        
+        [self.processView setProgressTintColor:[UIColor colorPink]];
+        
+        
+        [self addSubview:_processView];
+        
+        self.volume = [[UISlider alloc] initWithFrame:CGRectMake(50, self.imageView.frame.origin.y + 600, SCREEN_WIDTH - 100, 20)];
+        
+        [self.volume setMinimumValue:0.0];
+        [self.volume setMaximumValue:1.0];
+        [self.volume setValue:[[ZTPlayerManager sharedInstance].player getVolume]];
+        
+        [self.volume setMinimumTrackTintColor:[UIColor grayColor]];
+        [self.volume setMinimumValueImage:[UIImage imageNamed:@"volDown"]];
+        [self.volume setMaximumValueImage:[UIImage imageNamed:@"volUp"]];
+        
+        [self.volume addTarget:self action:@selector(updateValue:) forControlEvents:UIControlEventValueChanged];
+        
+        [self addSubview:_volume];
         
     }
     return self;
 }
+
+-(void) updateValue:(UISlider *) sender{
+    [[ZTPlayerManager sharedInstance].player setVolume:sender.value];
+}
+
 @end
