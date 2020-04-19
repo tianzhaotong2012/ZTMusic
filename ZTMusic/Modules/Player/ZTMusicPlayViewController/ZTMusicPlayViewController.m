@@ -76,6 +76,10 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
     }];
     
     [self loadPlayerVCSubviews];
+    
+    //监听系统音量
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChangeNotification:)name:@"AVSystemController_SystemVolumeDidChangeNotification" object:nil];
+    
     [self refreshUI];
 }
 
@@ -284,6 +288,14 @@ typedef NS_ENUM(NSInteger, ZTSettingVCSectionType) {
     self.popupItem.title = LOCSTR(@"未在播放");
     self.popupItem.image = [UIImage imageNamed:@"AppIcon60x60@3x"];
     self.popupItem.progress = 0.0;
+}
+
+//系统音量回调
+- (void)volumeChangeNotification:(NSNotification *)noti {
+    float volume = [[[noti userInfo] objectForKey:@"AVSystemController_AudioVolumeNotificationParameter"] floatValue];
+    NSLog(@"系统音量:%f", volume);
+    [[ZTPlayerManager sharedInstance].player setVolume:volume];
+    [self refreshUI];
 }
 
 @end

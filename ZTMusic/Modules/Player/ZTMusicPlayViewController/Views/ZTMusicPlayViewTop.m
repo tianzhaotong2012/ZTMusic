@@ -38,7 +38,7 @@
 
 + (CGFloat)viewHeightByDataModel:(id)dataModel
 {
-    return SCREEN_HEIGHT;
+    return SCREEN_HEIGHT - 20;
 }
 
 - (void)setViewDataModel:(ZTSongModel *)dataModel
@@ -58,6 +58,9 @@
     self.volume = [[UISlider alloc] initWithFrame:CGRectMake(100, 200, 100, 20)];
     
     [self.processView setProgress:[[ZTPlayerManager sharedInstance].player playingProcess]];
+    [self.volume setMinimumValue:0.0];
+    [self.volume setMaximumValue:1.0];
+    [self.volume setValue:[[ZTPlayerManager sharedInstance].player getVolume] animated:YES];
     
     [self setNeedsDisplay];
 }
@@ -184,7 +187,7 @@
         })
         .view;
         
-        self.processView = [[UIProgressView alloc] initWithFrame:CGRectMake(50, self.imageView.frame.origin.y + 450, SCREEN_WIDTH - 100, 20)];
+        self.processView = [[UIProgressView alloc] initWithFrame:CGRectMake(50, self.imageView.frame.origin.y + 425, SCREEN_WIDTH - 100, 20)];
 
         [self.processView setProgressViewStyle:UIProgressViewStyleDefault]; //设置进度条类型
         
@@ -193,7 +196,7 @@
         
         [self addSubview:_processView];
         
-        self.volume = [[UISlider alloc] initWithFrame:CGRectMake(50, self.imageView.frame.origin.y + 600, SCREEN_WIDTH - 100, 20)];
+        self.volume = [[UISlider alloc] initWithFrame:CGRectMake(50, self.imageView.frame.origin.y + 565, SCREEN_WIDTH - 100, 20)];
         
         [self.volume setMinimumValue:0.0];
         [self.volume setMaximumValue:1.0];

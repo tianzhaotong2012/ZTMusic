@@ -9,6 +9,9 @@
 #import "ZTAppDelegate.h"
 #import "ZTLauncherManager.h"
 
+#import <AVFoundation/AVFoundation.h>
+#import "ZTPlayerManager.h"
+
 @interface ZTAppDelegate ()
 
 @property (nonatomic, assign) UIBackgroundTaskIdentifier bgTaskId;
@@ -24,6 +27,14 @@
     [self.window setBackgroundColor:[UIColor whiteColor]];
     
 //    [[LCSDKManager sharedInstance] launchWithOptions:launchOptions];
+    
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryAmbient error:nil];
+    [audioSession setActive:YES error:nil];
+    NSError *error;
+    [[AVAudioSession sharedInstance] setActive:YES error:&error];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [[ZTPlayerManager sharedInstance].player setVolume:audioSession.outputVolume];
     
     [[ZTLauncherManager sharedInstance] launchInWindow:self.window];
     
